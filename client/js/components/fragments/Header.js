@@ -18,7 +18,9 @@ class Header extends Component {
     return (
       <div id="header" className="row">
         <div className="col-md-1">
-          <img className="logo" src={Logo}/>
+          <Link to="/">
+            <img className="logo" src={Logo}/>
+          </Link>
         </div>
         <div className="col-md-11">
           {header}
