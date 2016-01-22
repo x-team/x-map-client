@@ -3,17 +3,17 @@ import { Button, Input } from 'react-bootstrap';
 
 class LoginForm extends Component {
   constructor(props, context) {
-    super(props, context)
+    super(props, context);
     this.state = {
       email: this.props.email || '',
       password: this.props.password || ''
-    }
+    };
   }
 
   onSubmit(e) {
     e.preventDefault();
-    const { onSubmit } = this.props;
-    onSubmit(this.state.email, this.state.password);
+    const { onSubmit, onSuccess } = this.props;
+    onSubmit(this.state.email, this.state.password, onSuccess);
   }
 
   onEmailChange(e) {

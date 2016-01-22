@@ -3,10 +3,8 @@ import {
   APP_LOGOUT_SUCCESS
 } from '../constants/AppConstants';
 
-import assignToEmpty from '../utils/assign';
-
-function currentUserReducer(state = {}, action) {
-  Object.freeze(state);
+function currentUserReducer(currentUser = {}, action) {
+  Object.freeze(currentUser);
 
   switch (action.type) {
     case APP_LOGIN_SUCCESS:
@@ -14,7 +12,7 @@ function currentUserReducer(state = {}, action) {
     case APP_LOGOUT_SUCCESS:
       return {};
     default:
-      return state;
+      return currentUser;
   }
 }
 

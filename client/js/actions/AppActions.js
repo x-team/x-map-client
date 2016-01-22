@@ -11,10 +11,10 @@ import {
   APP_LOGOUT_FAILURE
 } from '../constants/AppConstants';
 
-export function login(email, password) {
+export function login(email, password, onSuccess) {
   return (dispatch) => {
     fetch('http://x-map.app/app_dev.php/api/logins.json', {
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({email, password}),
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -23,16 +23,17 @@ export function login(email, password) {
     })
       .then(response => response.json())
       .then(json => dispatch(loginSuccess(json)))
+      .then(onSuccess)
       .catch(() => dispatch(loginFailure()));
   };
 }
 
 export function loginSuccess(user) {
-  return { type: APP_LOGIN_SUCCESS, user };
+  return {type: APP_LOGIN_SUCCESS, user};
 }
 
 export function loginFailure() {
-  return { type: APP_LOGIN_FAILURE };
+  return {type: APP_LOGIN_FAILURE};
 }
 
 export function logout() {
@@ -47,9 +48,9 @@ export function logout() {
 }
 
 export function logoutSuccess() {
-  return { type: APP_LOGOUT_SUCCESS };
+  return {type: APP_LOGOUT_SUCCESS};
 }
 
 export function logoutFailure() {
-  return { type: APP_LOGOUT_FAILURE };
+  return {type: APP_LOGOUT_FAILURE};
 }
