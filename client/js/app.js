@@ -7,6 +7,8 @@ import createHistory from 'history/lib/createBrowserHistory';
 
 // Import the pages
 import HomePage from './components/pages/HomePage';
+import LoginPage from './components/pages/LoginPage';
+import RegistrationPage from './components/pages/RegistrationPage';
 import NotFoundPage from './components/pages/NotFound';
 import App from './components/App';
 
@@ -22,6 +24,8 @@ ReactDOM.render(
     <Router history={createHistory()}>
       <Route component={App}>
         <Route path="/" component={HomePage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegistrationPage} />
         <Route path="*" component={NotFoundPage} />
       </Route>
     </Router>

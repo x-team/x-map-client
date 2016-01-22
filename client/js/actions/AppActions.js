@@ -13,9 +13,13 @@ import {
 
 export function login(email, password) {
   return (dispatch) => {
-    fetch('logins.json', {
+    fetch('http://x-map.app/app_dev.php/api/logins.json', {
+      body: JSON.stringify({ email, password }),
       method: 'POST',
-      body: { email, password }
+      mode: 'cors',
+      headers: {
+        'content-type': 'application/json;charset=UTF-8'
+      }
     })
       .then(response => response.json())
       .then(json => dispatch(loginSuccess(json)))
@@ -33,17 +37,19 @@ export function loginFailure() {
 
 export function logout() {
   return (dispatch) => {
-    fetch('logouts.json', { method: 'POST' })
-      .then(response => response.json())
+    fetch('http://x-map.app/app_dev.php/api/logouts.json', {
+      method: 'POST',
+      mode: 'cors'
+    })
       .then(() => dispatch(logoutSuccess()))
       .catch(() => dispatch(logoutFailure()));
   };
 }
 
 export function logoutSuccess() {
-  return { type: APP_LOGIN_SUCCESS, user };
+  return { type: APP_LOGOUT_SUCCESS };
 }
 
 export function logoutFailure() {
-  return { type: APP_LOGIN_FAILURE };
+  return { type: APP_LOGOUT_FAILURE };
 }

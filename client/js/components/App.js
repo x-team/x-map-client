@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import * as UserActions from '../actions/UserActions'
-import * as AppActions from '../actions/AppActions'
 import { connect } from 'react-redux';
-import assignToEmpty from '../utils/assign';
+import * as AppActions from '../actions/AppActions';
 import Header from './fragments/Header';
 
 class App extends Component {
   render() {
-    const { user } = this.props;
+    const { currentUser, actions } = this.props;
     return (
       <div className="col-md-10 col-md-push-1">
-        <Header user={user}/>
+        <Header user={currentUser} onLogout={actions.logout}/>
         { this.props.children }
       </div>
     );
@@ -20,13 +18,13 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    currentUser: state.currentUser
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(assignToEmpty(AppActions, UserActions), dispatch)
+    actions: bindActionCreators(AppActions, dispatch)
   };
 }
 

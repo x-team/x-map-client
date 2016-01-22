@@ -1,4 +1,4 @@
-import React, { Component, PropTypes   } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import HeaderAuthenticated from './HeaderAuthenticated';
 import HeaderAnonymous from './HeaderAnonymous';
@@ -6,11 +6,11 @@ import Logo from '../../../img/logo.png';
 
 class Header extends Component {
   render() {
-    const { user } = this.props;
+    const { user, onLogout } = this.props;
 
     var header;
-    if (user) {
-      header = <HeaderAuthenticated user={user}/>;
+    if (user.id) {
+      header = <HeaderAuthenticated user={user} onLogout={onLogout}/>;
     } else {
       header = <HeaderAnonymous />;
     }

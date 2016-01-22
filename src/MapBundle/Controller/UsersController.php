@@ -8,7 +8,11 @@ use MapBundle\Form\Type\RegisterUserType;
 use MapBundle\Form\Type\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
+use FOS\RestBundle\Controller\Annotations\Prefix;
 
+/**
+ * @Prefix("api")
+ */
 class UsersController extends FOSRestController
 {
     protected $dm;

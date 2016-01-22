@@ -10,9 +10,13 @@ import {
 
 export function userCreate(email, password) {
   return (dispatch) => {
-    fetch('users.json', {
+    fetch('http://x-map.app/app_dev.php/api/users.json', {
+      body: JSON.stringify({ email, password, username: email }),
       method: 'POST',
-      body: { email, password }
+      mode: 'cors-with-forced-preflight',
+      headers: {
+        'content-type': 'application/json;charset=UTF-8'
+      }
     })
       .then(response => response.json())
       .then(json => dispatch(userCreateSuccess(json)))
