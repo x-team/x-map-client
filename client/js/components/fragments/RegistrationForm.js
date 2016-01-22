@@ -12,8 +12,8 @@ class RegistrationForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    const { onSubmit } = this.props;
-    onSubmit(this.state.email, this.state.password);
+    const { onSubmit, onSuccess } = this.props;
+    onSubmit(this.state.email, this.state.password, onSuccess);
   }
 
   onEmailChange(e) {

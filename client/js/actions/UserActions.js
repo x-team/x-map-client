@@ -8,7 +8,7 @@ import {
   USER_CREATE_FAILURE
 } from '../constants/AppConstants';
 
-export function userCreate(email, password) {
+export function userCreate(email, password, onSuccess) {
   return (dispatch) => {
     fetch('http://x-map.app/app_dev.php/api/users.json', {
       body: JSON.stringify({ email, password, username: email }),
@@ -20,6 +20,7 @@ export function userCreate(email, password) {
     })
       .then(response => response.json())
       .then(json => dispatch(userCreateSuccess(json)))
+      .then(onSuccess)
       .catch(() => dispatch(userCreateFailure()));
   };
 }
