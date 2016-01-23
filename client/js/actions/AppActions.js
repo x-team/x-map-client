@@ -18,7 +18,7 @@ export function routeChanged() {
 
 export function login(email, password, onSuccess) {
   return (dispatch) => {
-    fetch('http://x-map.app/app_dev.php/api/logins.json', {
+    fetch(process.env.API_BASE_URL + 'logins.json', {
       body: JSON.stringify({email, password}),
       method: 'POST',
       mode: 'cors',
@@ -43,7 +43,7 @@ export function loginFailure() {
 
 export function logout() {
   return (dispatch) => {
-    fetch('http://x-map.app/app_dev.php/api/logouts.json', {
+    fetch(process.env.API_BASE_URL + 'logouts.json', {
       method: 'POST',
       mode: 'cors'
     })
