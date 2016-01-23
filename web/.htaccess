@@ -35,6 +35,9 @@ DirectoryIndex app.php
     RewriteCond %{REQUEST_URI}::$1 ^/api(/.+)(.+)::\2$
     RewriteRule ^(.*) - [E=BASE:%1]
     RewriteRule .? %{ENV:BASE}app.php [L]
+
+    # Let index.html handle all non-API requests
+    RewriteRule .? %{ENV:BASE}index.html [L]
 </IfModule>
 
 <IfModule !mod_rewrite.c>
