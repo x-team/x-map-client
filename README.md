@@ -12,7 +12,7 @@
  8. Execute `vagrant up` and then `vagrant ssh` in `Homestead` folder - do the following in the SSH console:
     1. Execute `sudo apt-get remove php7*`
     2. Execute `sudo apt-get install mongodb php5-mongo php5-fpm php5-cli php5-curl`
-    3. Edit `/etc/nginx/sites-enabled/x-map.app` and replace `/var/run/php/php7.0-fpm.sock` with `/var/run/php5-fpm.sock`
+    3. Overwrite `/etc/nginx/sites-enabled/x-map.app` with `x-map.app`
     4. sudo service nginx restart
     5. Go to project folder
     6. Execute `composer install`. It will ask to provide values to some parameteres at the end - leave them empty
