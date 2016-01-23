@@ -19,4 +19,6 @@
     7. Go to `client` folder
     8. Execute `npm install`
  9. Add `192.168.10.10 x-map.app` to your `/etc/hosts`
+ 10. Run client with `npm start`
+ 11. Application will be available at `http://localhost:3000`
  
