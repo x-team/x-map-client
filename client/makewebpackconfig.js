@@ -3,6 +3,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+require('es6-promise').polyfill();
+
 module.exports = function(options) {
   var entry, jsLoaders, plugins, cssLoaders;
   // If production is true

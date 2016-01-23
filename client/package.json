@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "x-map",
   "dependencies": {
+    "es6-promise": "^3.0.2",
     "history": "^1.0.0",
     "react": "^0.14.0",
     "react-bootstrap": "^0.28.0",
