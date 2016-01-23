@@ -32,7 +32,7 @@ DirectoryIndex app.php
     # hosting, the base path will be prepended to allow proper resolution of the
     # app.php file; it will work in non-aliased environments as well, providing
     # a safe, one-size fits all solution.
-    RewriteCond %{REQUEST_URI}::$1 ^(/.+)(.+)::\2$
+    RewriteCond %{REQUEST_URI}::$1 ^/api(/.+)(.+)::\2$
     RewriteRule ^(.*) - [E=BASE:%1]
     RewriteRule .? %{ENV:BASE}app.php [L]
 </IfModule>

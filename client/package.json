@@ -1,7 +1,7 @@
 {
-  "name": "reactjs-boilerplate",
-  "version": "2.4.0",
-  "description": "Quick setup for new React.js applications featuring Redux, hot–reloading, PostCSS, react-router and Mocha.",
+  "name": "x-map",
+  "version": "0.0.0",
+  "description": "x-map",
   "dependencies": {
     "history": "^1.0.0",
     "react": "^0.14.0",
@@ -18,7 +18,7 @@
     "babel": "^6.0.0",
     "babel-core": "^6.0.0",
     "babel-eslint": "^4.1.2",
-    "babel-loader": "^6.0.0",
+    "babel-loader": "^6.1.0",
     "babel-plugin-react-transform": "^2.0.0",
     "babel-plugin-transform-react-constant-elements": "6.3.13",
     "babel-plugin-transform-react-inline-elements": "6.3.13",
@@ -61,7 +61,8 @@
     "test": "mocha --compilers js:babel-core/register --recursive",
     "test:watch": "npm test -- --watch",
     "start": "cross-env NODE_ENV=development node server.dev.js",
-    "build": "npm run test && cross-env NODE_ENV=production webpack --config webpack.prod.config.js --progress --colors -p",
+    "test-and-build": "npm run test && npm run build",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.config.js --progress --colors -p",
     "serve": "cross-env NODE_ENV=production node server.prod.js"
   },
   "author": "Max Stoiber",

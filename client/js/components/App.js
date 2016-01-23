@@ -5,6 +5,11 @@ import * as AppActions from '../actions/AppActions';
 import Header from './fragments/Header';
 
 class App extends Component {
+  constructor(props, context) {
+    super(props, context);
+    props.history.listen(props.actions.routeChanged);
+  }
+
   render() {
     const { currentUser, actions } = this.props;
 

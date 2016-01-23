@@ -7,9 +7,25 @@
       "plugins": [
         "transform-react-remove-prop-types",
         "transform-react-constant-elements",
-        "transform-react-inline-elements"
+        "transform-react-inline-elements",
+        "replace-config-vars"
       ]
     }
   },
-  "presets": ["es2015", "react", "stage-2"]
+  "presets": ["es2015", "react", "stage-2"],
+  "plugins": [
+    "replace-config-vars"
+  ],
+  "extra": {
+    "config": [
+      {
+        "development": {
+          "API_BASE_URL": "http://x-map.app/app_dev.php/api/"
+        },
+        "production": {
+          "API_BASE_URL": "http://ec2-52-33-252-13.us-west-2.compute.amazonaws.com/api/"
+        }
+      }
+    ]
+  }
 }

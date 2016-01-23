@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import HeaderAuthenticated from './HeaderAuthenticated';
 import HeaderAnonymous from './HeaderAnonymous';
+
 import Logo from '../../../img/logo.png';
+import 'file?name=[name].[ext]!../../../img/logo.png';
 
 class Header extends Component {
   render() {

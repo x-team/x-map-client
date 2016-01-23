@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-# Install bower and PHP packages
+# Build frontend
+cd client
+npm run build
+cd ../web
+rm -rf css/ js/ *.png
+cp -rf ../client/build/* .
+
+exit
+# Install PHP packages
 phpenv local 5.5
 composer config -g github-oauth.github.com $GITHUB_ACCESS_TOKEN
 composer install --prefer-dist --no-interaction

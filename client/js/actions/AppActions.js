@@ -3,6 +3,7 @@
 /* eslint-disable no-use-before-define */
 
 import {
+  APP_ROUTE_CHANGED,
   APP_LOGIN,
   APP_LOGIN_SUCCESS,
   APP_LOGIN_FAILURE,
@@ -10,6 +11,10 @@ import {
   APP_LOGOUT_SUCCESS,
   APP_LOGOUT_FAILURE
 } from '../constants/AppConstants';
+
+export function routeChanged() {
+  return { type: APP_ROUTE_CHANGED };
+}
 
 export function login(email, password, onSuccess) {
   return (dispatch) => {
@@ -24,7 +29,7 @@ export function login(email, password, onSuccess) {
       .then(response => response.json())
       .then(json => dispatch(loginSuccess(json)))
       .then(onSuccess)
-      .catch(() => dispatch(loginFailure()));
+      .catch(() => dispatch(loginFailure(response)));
   };
 }
 
@@ -51,6 +56,7 @@ export function logoutSuccess() {
   return {type: APP_LOGOUT_SUCCESS};
 }
 
-export function logoutFailure() {
+export function logoutFailure(response) {
+  console.log(response.json());
   return {type: APP_LOGOUT_FAILURE};
 }

@@ -2,23 +2,29 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as UserActions from '../../actions/UserActions';
-import RegistrationForm from '../fragments/RegistrationForm';
+import RegistrationForm from '../forms/RegistrationForm';
 
 class RegistrationPage extends Component {
-  redirectToHomepage() {
+  redirectToLoginPage() {
     this.props.history.pushState(null, '/login');
   }
 
   render() {
-    const { actions } = this.props;
+    const { actions, errors } = this.props;
 
     return (
       <div>
         <h1>Register</h1>
-        <RegistrationForm onSubmit={actions.userCreate} onSuccess={this.redirectToHomepage.bind(this)}/>
+        <RegistrationForm onSubmit={actions.userCreate} onSuccess={this.redirectToLoginPage.bind(this)} errors={errors}/>
       </div>
     );
   }
+}
+
+function mapStateToProps(state) {
+  return {
+    errors: state.errors.userCreate
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -27,4 +33,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(RegistrationPage);
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationPage);
