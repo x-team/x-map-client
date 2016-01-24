@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as AppActions from '../actions/AppActions';
 import Header from './fragments/Header';
+import Map from './fragments/Map';
 
 class App extends Component {
   constructor(props, context) {
@@ -14,8 +15,9 @@ class App extends Component {
     const { currentUser, actions } = this.props;
 
     return (
-      <div className="col-md-10 col-md-push-1">
+      <div>
         <Header user={currentUser} onLogout={actions.logout}/>
+        <Map />
         { this.props.children }
       </div>
     );

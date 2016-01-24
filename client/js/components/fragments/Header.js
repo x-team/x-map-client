@@ -10,24 +10,32 @@ class Header extends Component {
   render() {
     const { user, onLogout } = this.props;
 
-    var header;
+    let navigation;
     if (user.id) {
-      header = <HeaderAuthenticated user={user} onLogout={onLogout}/>;
+      // header = <HeaderAuthenticated user={user} onLogout={onLogout}/>;
+
+      navigation =  <ul>
+        <Button className="btn btn-success pull-right" onClick={this.onLogout.bind(this)}>Logout</Button>
+      </ul>;
     } else {
-      header = <HeaderAnonymous />;
+      // header = <HeaderAnonymous />;
+
+      navigation =  <ul>
+        <Link className="btn btn-success col-md-5" to="/login">Login</Link>
+        <Link className="btn btn-success col-md-5 col-md-push-1" to="/register">Register</Link>
+      </ul>;
     }
 
     return (
-      <div id="header" className="row">
-        <div className="col-md-1">
-          <Link to="/">
-            <img className="logo" src={Logo}/>
-          </Link>
-        </div>
-        <div className="col-md-11">
-          {header}
-        </div>
-      </div>
+      <header id="header">
+        <Link id="logo" to="/">
+          <img className="logo" src={Logo} alt="X-Map brand"/>
+        </Link>
+        <h1>X-Map</h1>
+        <nav id="navigation">
+          {navigation}
+        </nav>
+      </header>
     );
   }
 }
