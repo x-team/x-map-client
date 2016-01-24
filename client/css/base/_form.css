@@ -1,0 +1,89 @@
+/**
+ * Forms
+
+Developer's notes, will be removed.
+
+Form tags:
+
+- <input>
+- <textarea>
+- <button>
+- <select>
+- <option>
+- <optgroup>
+- <fieldset>
+- <label>
+
+
+Input types:
+
+- button
+- checkbox
+- color
+- date
+- datetime
+- datetime-local
+- email
+- file
+- hidden
+- image
+- month
+- number
+- password
+- radio
+- range
+- reset
+- search
+- submit
+- tel
+- text
+- time
+- url
+- week
+
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: $dark-grey;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+}
+
+button[disabled],
+html input[disabled] {
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+}
+
+input[type="number"] {
+}
+
+input[type="search"] {
+}
+
+fieldset {
+}
+
+legend {
+}
+
+textarea {
+}
+
+optgroup {
+}

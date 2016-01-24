@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 class HomePage extends Component {
-  constructor (state) {
-    super(state);
-    this.state = state;
+  constructor () {
+    super();
+    this.state = { visibility: false };
   }
 
   onClick () {

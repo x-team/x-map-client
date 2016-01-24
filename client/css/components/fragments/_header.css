@@ -12,7 +12,7 @@
 #header h1 {
   text-align: center;
   color: $light-grey;
-  text-shadow: 0 1px 0 $dark-grey;
+  text-shadow: 2px 2px 0 $dark-grey;
   margin: 0;
   line-height: 70px;
 }
