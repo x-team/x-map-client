@@ -15,7 +15,7 @@ class Header extends Component {
       // header = <HeaderAuthenticated user={user} onLogout={onLogout}/>;
 
       navigation = <nav id="navigation">
-        <Button className="btn btn-success pull-right" onClick={ this.onLogout.bind(this) }>Logout</Button>
+        <button onClick={ onLogout.bind(this) }>Logout</button>
       </nav>;
     } else {
       // header = <HeaderAnonymous />;
