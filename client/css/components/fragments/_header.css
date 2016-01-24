@@ -32,7 +32,7 @@
   background-color: $light-grey;
   text-shadow: 0 1px 0 $light-grey;
   padding: 1rem;
-  border-radius: 3px;
+  border-radius: 5px;
   color: $dark-grey;
   text-decoration: none;
   border: 1px solid $mid-grey;

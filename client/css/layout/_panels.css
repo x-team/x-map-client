@@ -1,17 +1,20 @@
 /*This file contains all styles related to the panels of the site/application.*/
 .panel {
   width: 400px;
-  min-height: 400px;
   position: fixed;
   top: 80px;
   right: 60px;
   z-index: 2;
-  /*background-image: linear-gradient(to top, #fff, $light-grey);*/
-  background-color: #fff;
-  box-shadow: inset 0px -1px 3px 0 $dark-grey;
-  padding: 20px;
+  background-color: rgba(0, 0, 0, .65);
+  padding: 20px 20px 60px;
+  color: #fff;
+  border-radius: 5px;
 }
 
 .panel h2 {
   margin-top: 0;
+}
+
+.panel.hidden {
+  display: none;
 }
