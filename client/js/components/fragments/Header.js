@@ -12,18 +12,9 @@ class Header extends Component {
 
     let navigation;
     if (user.id) {
-      // header = <HeaderAuthenticated user={user} onLogout={onLogout}/>;
-
-      navigation = <nav id="navigation">
-        <button onClick={ onLogout.bind(this) }>Logout</button>
-      </nav>;
+      navigation = <HeaderAuthenticated user={user} onLogout={onLogout} />;
     } else {
-      // header = <HeaderAnonymous />;
-
-      navigation = <nav id="navigation">
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-      </nav>;
+      navigation = <HeaderAnonymous />;
     }
 
     return (

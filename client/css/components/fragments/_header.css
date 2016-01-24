@@ -27,28 +27,33 @@
   line-height: 70px;
 }
 
-#header #navigation a {
+#header #navigation a,
+#header #navigation button {
   background-image: linear-gradient(to top, $light-grey, #fff);
   background-color: $light-grey;
   text-shadow: 0 1px 0 $light-grey;
-  padding: 1rem;
-  border-radius: 5px;
+  padding: 15px;
   color: $dark-grey;
   text-decoration: none;
   border: 1px solid $mid-grey;
 }
 
-#header #navigation a:hover {
-  background-image: linear-gradient(to top, #fff, $light-grey);
-  color: $light-brand-color;
+#header #navigation button {
+  line-height: 1.1;
 }
 
-#header #navigation a:first-child {
-  border-radius: 3px 0 0 3px;
-  border-right: 1px solid $mid-grey;
+#header #navigation a:hover,
+#header #navigation button:hover {
+  background-image: linear-gradient(to top, #fff, $mid-grey);
+  color: $brand-color;
 }
 
-#header #navigation a:last-child {
-  border-radius: 0 3px 3px 0;
+#header #navigation > *:first-child {
+  border-radius: 5px 0 0 5px;
+  border-right: 1px solid $light-grey;
+}
+
+#header #navigation > *:last-child {
+  border-radius: 0 5px 5px 0;
   border-left: 1px solid #fff;
 }

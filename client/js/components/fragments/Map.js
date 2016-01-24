@@ -64,7 +64,7 @@ class Map extends Component {
       // hash: true
     });
 
-    this.map.addControl(new mapboxgl.Navigation());
+    // this.map.addControl(new mapboxgl.Navigation());
 
     // this.map.addControl(new mapboxgl.Geocoder({ container: 'geocoder-container' }));
   }
