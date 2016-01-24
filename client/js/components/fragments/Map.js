@@ -46,9 +46,27 @@ class Map extends Component {
   }
 
   componentDidMount () {
-    L.mapbox.accessToken = 'pk.eyJ1IjoiYmVybmFyZG9kaWFzYyIsImEiOiJlZGFiZmUwOTUzZGM5MWIwOTgwMDhmY2ZkMGJlMzQ1OCJ9.tR40g6DTOsTyi101mxSWJg';
-    this.map = L.mapbox.map('map', 'mapbox.streets', { zoomControl: false });
-    new L.Control.Zoom({ position: 'topright' }).addTo(this.map);
+    /*L.mapbox.accessToken = 'pk.eyJ1IjoiYmVybmFyZG9kaWFzYyIsImEiOiJlZGFiZmUwOTUzZGM5MWIwOTgwMDhmY2ZkMGJlMzQ1OCJ9.tR40g6DTOsTyi101mxSWJg';
+    this.map = L.mapbox.map('map', { zoomControl: false, style: 'mapbox://styles/mapbox/satellite-v8' });
+    new L.Control.Zoom({ position: 'topright' }).addTo(this.map);*/
+
+
+    // https://www.mapbox.com/mapbox-gl-js/api/
+    // https://www.mapbox.com/help/mapbox-gl-js-fundamentals/
+    // http://igortihonov.com/2014/10/21/taking-mapbox-gl-for-a-spin/
+
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYmVybmFyZG9kaWFzYyIsImEiOiJlZGFiZmUwOTUzZGM5MWIwOTgwMDhmY2ZkMGJlMzQ1OCJ9.tR40g6DTOsTyi101mxSWJg';
+    this.map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/satellite-v8',
+      // center: [-74.50, 40],
+      // zoom: 9,
+      // hash: true
+    });
+
+    this.map.addControl(new mapboxgl.Navigation());
+
+    this.map.addControl(new mapboxgl.Geocoder({ container: 'geocoder-container' }));
   }
 
   render() {

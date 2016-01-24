@@ -28,11 +28,11 @@ class App extends Component {
     const { currentUser, actions } = this.props;
 
     return (
-      <div>
+      <section className="panels">
         <Header user={ currentUser } onLogout={ actions.logout } onLogoutSuccess={ this.redirectToHomePage.bind(this) } />
-        <Map />
         { this.props.children }
-      </div>
+        <Map />
+      </section>
     );
   }
 }
