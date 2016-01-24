@@ -27,7 +27,7 @@ body {
 }
 
 body {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: $text-font-stack;
   overflow: hidden;
 }
 

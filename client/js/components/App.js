@@ -15,11 +15,11 @@ class App extends Component {
     const { currentUser, actions } = this.props;
 
     return (
-      <div>
+      <section className="panels">
         <Header user={currentUser} onLogout={actions.logout}/>
         <Map />
         { this.props.children }
-      </div>
+      </section>
     );
   }
 }

@@ -14,27 +14,25 @@ class Header extends Component {
     if (user.id) {
       // header = <HeaderAuthenticated user={user} onLogout={onLogout}/>;
 
-      navigation =  <ul>
-        <Button className="btn btn-success pull-right" onClick={this.onLogout.bind(this)}>Logout</Button>
-      </ul>;
+      navigation = <nav id="navigation">
+        <Button className="btn btn-success pull-right" onClick={ this.onLogout.bind(this) }>Logout</Button>
+      </nav>;
     } else {
       // header = <HeaderAnonymous />;
 
-      navigation =  <ul>
-        <Link className="btn btn-success col-md-5" to="/login">Login</Link>
-        <Link className="btn btn-success col-md-5 col-md-push-1" to="/register">Register</Link>
-      </ul>;
+      navigation = <nav id="navigation">
+        <Link to="/login">Login</Link>
+        <Link to="/register">Register</Link>
+      </nav>;
     }
 
     return (
       <header id="header">
         <Link id="logo" to="/">
-          <img className="logo" src={Logo} alt="X-Map brand"/>
+          <img className="logo" src={ Logo } alt="X-Map brand"/>
         </Link>
         <h1>X-Map</h1>
-        <nav id="navigation">
-          {navigation}
-        </nav>
+        { navigation }
       </header>
     );
   }

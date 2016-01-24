@@ -13,8 +13,8 @@ class RegistrationPage extends Component {
     const { actions, errors } = this.props;
 
     return (
-      <div>
-        <h1>Register</h1>
+      <div className="panel">
+        <h2>Register</h2>
         <RegistrationForm onSubmit={actions.userCreate} onSuccess={this.redirectToLoginPage.bind(this)} errors={errors}/>
       </div>
     );
