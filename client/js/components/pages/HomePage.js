@@ -35,67 +35,6 @@ class HomePage extends Component {
           </header>
 
           <section>
-            <h2>Form</h2>
-            <form>
-              <p>Input:</p>
-              <input type="text" name="name" tabindex="1" placeholder="text input" />
-              <input type="email" name="name" tabindex="1" placeholder="email input" />
-              <input type="password" name="name" tabindex="1" placeholder="password input" />
-
-              <label>
-                <p>Textarea:</p>
-                <textarea name="textarea"></textarea>
-              </label>
-
-              <fieldset>
-                <legend>Radio buttons</legend>
-                <label>
-                  Choice 1: <input type="radio" name="radio-choice[]" tabindex="2" value="choice-1" />
-                </label>
-                <label>
-                  Choice 2: <input type="radio" name="radio-choice[]" tabindex="3" value="choice-2" />
-                </label>
-                <label>
-                  <input type="radio" name="radio-choice[]" tabindex="2" value="choice-1" /> Choice 3
-                </label>
-                <label>
-                  <input type="radio" name="radio-choice[]" tabindex="3" value="choice-2" /> Choice 4
-                </label>
-              </fieldset>
-
-              <fieldset>
-                <legend>Checkbox group</legend>
-                <label>
-                  Checkbox 1: <input type="checkbox" name="checkbox-choice[]" />
-                </label>
-                <label>
-                  Checkbox 2: <input type="checkbox" name="checkbox-choice[]" />
-                </label>
-                <label>
-                  <input type="checkbox" name="checkbox-choice[]" /> Checkbox 3
-                </label>
-                <label>
-                  <input type="checkbox" name="checkbox-choice[]" /> Checkbox 4
-                </label>
-              </fieldset>
-
-              <label>
-                <p>Select Dropdown:</p>
-                <select name="select-choice">
-                  <option value="Choice 1">Choice 1</option>
-                  <option value="Choice 2">Choice 2</option>
-                  <option value="Choice 3">Choice 3</option>
-                </select>
-              </label>
-
-              <p>Buttons</p>
-              <button className="button" type="submit">Submit</button>
-            </form>
-          </section>
-
-          <hr />
-
-          <section>
             <h2>Typography</h2>
 
             <h3>Text:</h3>
@@ -162,6 +101,67 @@ class HomePage extends Component {
             <p><img src="http://placehold.it/350x200" /></p>
             <p>Nam rhoncus nunc eget nisi mattis, id auctor diam hendrerit. <code>&lt;img src="http://placehold.it/350x150" /&gt;</code> Nulla eget imperdiet ante, quis imperdiet odio. Donec faucibus lorem sodales justo accumsan, id imperdiet quam placerat. Curabitur sed bibendum dui. Donec condimentum diam diam. Proin facilisis viverra libero sed dictum. Maecenas fermentum a velit id euismod. Vivamus in eros nec lacus malesuada sagittis nec at eros. Etiam nibh elit, semper sed vulputate eu, posuere vitae nibh. Praesent in vehicula est, id tristique risus. Aliquam erat volutpat. Nulla a erat neque.</p>
             <p>Nam rhoncus nunc eget nisi mattis, id auctor diam hendrerit. Nulla eget imperdiet ante, quis imperdiet odio. Donec faucibus lorem sodales justo accumsan, id imperdiet quam placerat. Curabitur sed bibendum dui. Donec condimentum diam diam. Proin facilisis viverra libero sed dictum. Maecenas fermentum a velit id euismod. Vivamus in eros nec lacus malesuada sagittis nec at eros. Etiam nibh elit, semper sed vulputate eu, posuere vitae nibh. Praesent in vehicula est, id tristique risus. Aliquam erat volutpat. Nulla a erat neque.</p>
+          </section>
+
+          <hr />
+
+          <section>
+            <h2>Form</h2>
+            <form>
+              <p>Input:</p>
+              <input type="text" name="name" tabindex="1" placeholder="text input" />
+              <input type="email" name="name" tabindex="1" placeholder="email input" />
+              <input type="password" name="name" tabindex="1" placeholder="password input" />
+
+              <label>
+                <p>Textarea:</p>
+                <textarea name="textarea"></textarea>
+              </label>
+
+              <fieldset>
+                <legend>Radio buttons</legend>
+                <label>
+                  Choice 1: <input type="radio" name="radio-choice[]" tabindex="2" value="choice-1" />
+                </label>
+                <label>
+                  Choice 2: <input type="radio" name="radio-choice[]" tabindex="3" value="choice-2" />
+                </label>
+                <label>
+                  <input type="radio" name="radio-choice[]" tabindex="2" value="choice-1" /> Choice 3
+                </label>
+                <label>
+                  <input type="radio" name="radio-choice[]" tabindex="3" value="choice-2" /> Choice 4
+                </label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Checkbox group</legend>
+                <label>
+                  Checkbox 1: <input type="checkbox" name="checkbox-choice[]" />
+                </label>
+                <label>
+                  Checkbox 2: <input type="checkbox" name="checkbox-choice[]" />
+                </label>
+                <label>
+                  <input type="checkbox" name="checkbox-choice[]" /> Checkbox 3
+                </label>
+                <label>
+                  <input type="checkbox" name="checkbox-choice[]" /> Checkbox 4
+                </label>
+              </fieldset>
+
+              <label>
+                <p>Select Dropdown:</p>
+                <select name="select-choice">
+                  <option value="Choice 1">Choice 1</option>
+                  <option value="Choice 2">Choice 2</option>
+                  <option value="Choice 3">Choice 3</option>
+                </select>
+              </label>
+
+              <p>Buttons</p>
+              <button className="button" type="submit">Submit</button>
+            </form>
           </section>
 
           <hr />
