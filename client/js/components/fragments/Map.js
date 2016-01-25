@@ -1,72 +1,73 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import GoogleMapsLoader from 'google-maps';
 
 class Map extends Component {
-/*  constructor (props) {
-    super(props);
-    console.log(props);
-  }*/
-
-  /**
-   * Create a marker with the given image in the exif geolocation
-   */
-  placeMarker (img, lat, lng) {
-    let myLayer = L.mapbox.featureLayer().addTo(this.map);
-
-    let geoJson = [{
-      type: 'Feature',
-      'geometry': {
-        'type': 'Point',
-        'coordinates': [lng, lat]
-      },
-      'properties': {
-        'marker-color': '#3c4e5a',
-        'marker-size': 'large',
-        'image': img
-      }
-    }];
-
-    myLayer.on('layeradd', e => {
-      let marker = e.layer;
-      let feature = marker.feature;
-      let image = feature.properties.image;
-
-      // Create custom popup content
-      let popupContent = `<div class="popup"><img src="${image}" width="300" /></div>`;
-
-      // http://leafletjs.com/reference.html#popup
-      marker.bindPopup(popupContent, {
-        closeButton: true,
-        minWidth: 320
-      });
-    });
-
-    // Add features to the map
-    myLayer.setGeoJSON(geoJson);
+  constructor () {
+    super();
+    this.map;
   }
 
   componentDidMount () {
-    /*L.mapbox.accessToken = 'pk.eyJ1IjoiYmVybmFyZG9kaWFzYyIsImEiOiJlZGFiZmUwOTUzZGM5MWIwOTgwMDhmY2ZkMGJlMzQ1OCJ9.tR40g6DTOsTyi101mxSWJg';
-    this.map = L.mapbox.map('map', { zoomControl: false, style: 'mapbox://styles/mapbox/satellite-v8' });
-    new L.Control.Zoom({ position: 'topright' }).addTo(this.map);*/
+    // https://developers.google.com/maps/documentation/javascript/reference
+    // https://developers.google.com/maps/documentation/javascript/libraries
+    // https://developers.google.com/maps/documentation/javascript/controls
+    GoogleMapsLoader.VERSION = '3.22';
+    GoogleMapsLoader.LIBRARIES = ['drawing'];
+    GoogleMapsLoader.load(google => {
+      this.map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 0, lng: 0},
+        zoom: 2,
+        mapTypeIds: [
+          google.maps.MapTypeId.HYBRID,
+          google.maps.MapTypeId.ROADMAP,
+          google.maps.MapTypeId.SATELLITE,
+          google.maps.MapTypeId.TERRAIN
+        ],
+        scaleControl: true,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+          position: google.maps.ControlPosition.LEFT_BOTTOM
+        },
+        streetViewControl: true,
+        streetViewControlOptions: {
+          position: google.maps.ControlPosition.LEFT_BOTTOM
+        },
+        zoomControl: true,
+        zoomControlOptions: {
+          position: google.maps.ControlPosition.LEFT_BOTTOM
+        }
+      });
 
+      this.map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+      this.map.data.loadGeoJson('temp-fixture.json');
 
-    // https://www.mapbox.com/mapbox-gl-js/api/
-    // https://www.mapbox.com/help/mapbox-gl-js-fundamentals/
-    // http://igortihonov.com/2014/10/21/taking-mapbox-gl-for-a-spin/
-
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYmVybmFyZG9kaWFzYyIsImEiOiJlZGFiZmUwOTUzZGM5MWIwOTgwMDhmY2ZkMGJlMzQ1OCJ9.tR40g6DTOsTyi101mxSWJg';
-    this.map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/satellite-v8',
-      // center: [-74.50, 40],
-      // zoom: 9,
-      // hash: true
+      var drawingManager = new google.maps.drawing.DrawingManager({
+        // drawingMode: google.maps.drawing.OverlayType.MARKER,
+        drawingControl: true,
+        drawingControlOptions: {
+          position: google.maps.ControlPosition.BOTTOM_CENTER,
+          drawingModes: [
+            google.maps.drawing.OverlayType.MARKER,
+            google.maps.drawing.OverlayType.CIRCLE,
+            google.maps.drawing.OverlayType.POLYGON,
+            google.maps.drawing.OverlayType.POLYLINE,
+            google.maps.drawing.OverlayType.RECTANGLE
+          ]
+        },
+        // markerOptions: {icon: 'images/beachflag.png'},
+        circleOptions: {
+          fillColor: '#ffff00',
+          fillOpacity: 1,
+          strokeWeight: 5,
+          clickable: false,
+          editable: true,
+          zIndex: 1
+        }
+      });
+      drawingManager.setMap(this.map);
     });
-
-    // this.map.addControl(new mapboxgl.Navigation());
-
-    // this.map.addControl(new mapboxgl.Geocoder({ container: 'geocoder-container' }));
   }
 
   render() {

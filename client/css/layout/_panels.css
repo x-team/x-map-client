@@ -1,7 +1,7 @@
 /*This file contains all styles related to the panels of the site/application.*/
 .panel {
   width: 400px;
-  max-height: calc(100% - 130px);
+  max-height: calc(100% - 110px);
   position: fixed;
   top: 80px;
   right: 10px;

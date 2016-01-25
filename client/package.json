@@ -4,6 +4,7 @@
   "description": "x-map",
   "dependencies": {
     "es6-promise": "^3.0.2",
+    "google-maps": "^3.1.0",
     "history": "^1.0.0",
     "leaflet": "^0.7.7",
     "mapbox-gl-leaflet": "0.0.1",

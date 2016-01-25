@@ -28,7 +28,7 @@ class App extends Component {
     const { currentUser, actions } = this.props;
 
     return (
-      <section className="panels">
+      <section>
         <Header user={ currentUser } onLogout={ actions.logout } onLogoutSuccess={ this.redirectToHomePage.bind(this) } />
         { this.props.children }
         <Map />
