@@ -28,13 +28,17 @@ class LoginForm extends Component {
 
     return (
       <div id="loginForm">
-        <h2>Login</h2>
-        <ErrorList errors={ errors } showFieldErrors={ true }/>
-        <form onSubmit={ this.onSubmit.bind(this) }>
-          <input type="email" placeholder="Email" onChange={ this.onStateChange.bind(this, 'email') } required />
-          <input type="password" placeholder="Password" onChange={ this.onStateChange.bind(this, 'password') } required />
-          <button type="submit">Login</button>
-        </form>
+        <article>
+          <section>
+            <h2>Login</h2>
+            <ErrorList errors={ errors } showFieldErrors={ true } />
+            <form onSubmit={ this.onSubmit.bind(this) }>
+              <input type="email" placeholder="Email" onChange={ this.onStateChange.bind(this, 'email') } required />
+              <input type="password" placeholder="Password" onChange={ this.onStateChange.bind(this, 'password') } required />
+              <button type="submit">Login</button>
+            </form>
+          </section>
+        </article>
       </div>
     );
   }

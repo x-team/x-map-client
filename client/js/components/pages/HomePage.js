@@ -16,15 +16,22 @@ class HomePage extends Component {
     // to do: remove hidden class if click in the home logo
     return (
       <div className={ 'panel homepage ' + visibility }>
-        <h2>Welcome to X-Map</h2>
-        <p>Please <Link to="/login">Log in</Link> or <Link to="/register">Register</Link> to proceed.</p>
-        <p>An <a href="https://github.com/x-team/x-map/" target="_blank">open source</a> project at <a href="http://x-team.com/community/" target="_blank">X-Team</a></p>
-        <button onClick={ this.onClick.bind(this) }>Click to hide panel.</button>
+        <article>
+          <section>
+            <h2>Welcome to X-Map</h2>
+            <p>Please <Link to="/login">Log in</Link> or <Link to="/register">Register</Link> to proceed.</p>
+            <p>An <a href="https://github.com/x-team/x-map/" target="_blank">open source</a> project at <a href="http://x-team.com/community/" target="_blank">X-Team</a></p>
+            <button onClick={ this.onClick.bind(this) }>Click to hide panel.</button>
+          </section>
+        </article>
 
         <hr />
 
         <article>
-          <h1>Base content styles</h1>
+          <header>
+            <h1>Base content styles</h1>
+            <p>will have here an arrow for collapsible behavior</p>
+          </header>
 
           <section>
             <h2>Typography</h2>
@@ -195,6 +202,15 @@ class HomePage extends Component {
 
           <section>
             <h2>Media</h2>
+
+            <img className="center" src="http://placehold.it/100x100" />
+
+            <img src="http://placehold.it/150x150" />
+
+            <img src="http://placehold.it/350x150" />
+
+            <img src="http://placehold.it/550x150" />
+
 
             <audio src="/music/good_enough.mp3" controls>
               <p>Fallback content goes here.</p>

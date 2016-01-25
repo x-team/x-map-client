@@ -28,14 +28,17 @@ class RegistrationForm extends Component {
 
     return (
       <div id="registrationForm">
-        <h2>Register</h2>
-        <ErrorList errors={ errors } showFieldErrors={ true }/>
-        <ErrorList errors={ errors } />
-        <form onSubmit={ this.onSubmit.bind(this) }>
-          <input type="email" placeholder="Email" onChange={ this.onStateChange.bind(this, 'email') } required />
-          <input type="password" placeholder="Password" onChange={ this.onStateChange.bind(this, 'password') } required />
-          <button type="submit">Register</button>
-        </form>
+        <article>
+          <section>
+            <h2>Register</h2>
+            <ErrorList errors={ errors } showFieldErrors={ true } />
+            <form onSubmit={ this.onSubmit.bind(this) }>
+              <input type="email" placeholder="Email" onChange={ this.onStateChange.bind(this, 'email') } required />
+              <input type="password" placeholder="Password" onChange={ this.onStateChange.bind(this, 'password') } required />
+              <button type="submit">Register</button>
+            </form>
+          </section>
+        </article>
       </div>
     );
   }

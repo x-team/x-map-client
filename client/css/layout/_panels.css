@@ -14,23 +14,45 @@
   overflow-y: auto;
 }
 
-.panel h2 {
+.panel.hidden {
+  display: none;
+}
+
+.panel article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.panel article > * {
+  max-width: 100%;
+}
+
+.panel article > section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.panel article > header > *,
+.panel article > section > * {
+  margin-bottom: 20px;
+  max-width: calc(100% - 40px);
+}
+
+.panel article > header > *,
+.panel article > section > * {
+  margin-left: 20px;
+  margin-right: 20px;
   margin-top: 0;
 }
 
-.panel > *:first-child {
+.panel article > header > *:first-child,
+.panel article > section > *:first-child {
   margin-top: 20px;
 }
 
-.panel > *:last-child {
-  margin-bottom: 60px;
-}
-
-.panel > * {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.panel.hidden {
-  display: none;
+.panel article > header > *:last-child,
+.panel article > section > *:last-child {
+  margin-bottom: 40px;
 }
