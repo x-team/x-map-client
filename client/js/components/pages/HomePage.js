@@ -187,6 +187,9 @@ class HomePage extends Component {
                   <th>Email</th>
                   <th>Name</th>
                   <th>Actions</th>
+                  <th>Actions</th>
+                  <th>Actions</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -194,6 +197,26 @@ class HomePage extends Component {
                   <td>users[id].email</td>
                   <td>users[id].firstName users[id].lastName</td>
                   <td><a>View</a></td>
+                  <td><a>View</a></td>
+                  <td><a>View</a></td>
+                  <td><a>View</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Email</th>
+                  <th>Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>users[id].email</td>
+                  <td>users[id].firstName users[id].lastName</td>
+                  <td><a>View</a> <a>View</a> <a>View</a> <a>View</a> <a>View</a> <a>View</a></td>
                 </tr>
               </tbody>
             </table>
@@ -202,14 +225,18 @@ class HomePage extends Component {
           <section>
             <h2>Media</h2>
 
+            <h3>Images:</h3>
             <img className="center" src="http://placehold.it/100x100" />
+            <p><code>&lt;img className="center" src="http://placehold.it/100x100" /&gt;</code></p>
 
             <img src="http://placehold.it/150x150" />
+            <p><code>&lt;img src="http://placehold.it/150x150" /&gt;</code></p>
 
             <img src="http://placehold.it/350x150" />
+            <p><code>&lt;img src="http://placehold.it/350x150" /&gt;</code></p>
 
             <img src="http://placehold.it/550x150" />
-
+            <p><code>&lt;img src="http://placehold.it/550x150" /&gt;</code></p>
 
             <audio src="/music/good_enough.mp3" controls>
               <p>Fallback content goes here.</p>
@@ -227,17 +254,19 @@ class HomePage extends Component {
 
           <section>
             <h2>Panel</h2>
-            <h3>HTML structure Required</h3>
+            <h3>HTML structure Required:</h3>
             <pre><code>
-&lt;div className={ 'panel' }&gt;&lt;/div&gt;
+&lt;div className='panel'&gt;Panel component&lt;/div&gt;
             </code></pre>
+            <h3>Sample:</h3>
+            <div className='panel'>Panel component</div>
           </section>
 
           <section>
             <h2>Collapsible</h2>
-            <h3>HTML structure Required</h3>
+            <h3>HTML structure Required:</h3>
             <pre><code>
-&lt;article&gt;<br/>
+&lt;article className='collapsible panel'&gt;<br/>
   &lt;header&gt;<br/>
     &lt;h1&gt;Header h1&lt;/h1&gt;<br/>
   &lt;/header&gt;<br/>
@@ -249,17 +278,34 @@ class HomePage extends Component {
   &lt;/footer&gt;<br/>
 &lt;/article&gt;
             </code></pre>
+            <h3>Sample:</h3>
+            <article className='collapsible panel'>
+              <header>
+                <h1>Header h1 in the heaeder</h1>
+              </header>
+              <section>
+                <h2>Header h2 in a section</h2>
+              </section>
+              <footer>
+                <h2>Header h2 in the footer</h2>
+              </footer>
+            </article>
           </section>
 
           <section>
             <h2>Navigation</h2>
-            <h3>HTML structure Required</h3>
+            <h3>HTML structure Required:</h3>
             <pre><code>
-&lt;nav&gt;<br/>
+&lt;nav className='navigation'&gt;<br/>
   &lt;a href="#"&gt;Login&lt;/a&gt;<br/>
   &lt;a href="#"&gt;Register&lt;/a&gt;<br/>
 &lt;/nav&gt;
             </code></pre>
+            <h3>Sample:</h3>
+            <nav className='navigation'>
+              <a href="#">Login</a>
+              <a href="#">Register</a>
+            </nav>
           </section>
 
         </article>

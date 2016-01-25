@@ -6,7 +6,7 @@ class HeaderAuthenticated extends Component {
     const { user } = this.props;
     return (
       <div>
-        <nav id="navigation">
+        <nav className="navigation">
           <Link to="/profiles">Profiles</Link>
           <Link to={ '/profile/' + user.id }>My profile</Link>
           <button onClick={ this.props.onLogout.bind(this, this.props.onLogoutSuccess) }>Logout</button>

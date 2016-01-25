@@ -7,11 +7,14 @@
   right: 10px;
   z-index: 2;
   background-color: rgba(0, 0, 0, .65);
-  /*padding: 20px 20px 60px;*/
   color: #fff;
   border-radius: 5px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.panel .panel {
+  position: initial;
 }
 
 .panel.hidden {
@@ -25,7 +28,12 @@
 }
 
 .panel article > * {
+  width: 100%;
   max-width: 100%;
+}
+
+.panel article > header,
+.panel article > section {
 }
 
 .panel article > section {
@@ -35,16 +43,13 @@
 }
 
 .panel article > header > *,
-.panel article > section > * {
-  margin-bottom: 20px;
-  max-width: calc(100% - 40px);
-}
-
-.panel article > header > *,
-.panel article > section > * {
+.panel article > section > *,
+.panel article > footer > * {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 0;
+  margin-bottom: 20px;
+  max-width: calc(100% - 40px);
 }
 
 .panel article > header > *:first-child,

@@ -6,7 +6,7 @@ class HeaderAnonymous extends Component {
     const { user } = this.props;
     return (
       <div>
-        <nav id="navigation">
+        <nav className="navigation">
           <Link to="/login">Login</Link>
           <Link to="/register">Register</Link>
         </nav>
