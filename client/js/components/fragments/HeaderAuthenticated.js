@@ -7,9 +7,9 @@ class HeaderAuthenticated extends Component {
     return (
       <div>
         <nav className="navigation">
-          <Link to="/profiles">Profiles</Link>
-          <Link to={ '/profile/' + user.id }>My profile</Link>
-          <button onClick={ this.props.onLogout.bind(this, this.props.onLogoutSuccess) }>Logout</button>
+          <Link className="button" to="/profiles">Profiles</Link>
+          <Link className="button" to={ '/profile/' + user.id }>My profile</Link>
+          <button className="button" onClick={ this.props.onLogout.bind(this, this.props.onLogoutSuccess) }>Logout</button>
         </nav>
       </div>
     );

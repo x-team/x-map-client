@@ -16,8 +16,8 @@ class Map extends Component {
     GoogleMapsLoader.LIBRARIES = ['drawing'];
     GoogleMapsLoader.load(google => {
       this.map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 0, lng: 0},
-        zoom: 2,
+        center: {lat: 0, lng: 50},
+        zoom: 3,
         mapTypeIds: [
           google.maps.MapTypeId.HYBRID,
           google.maps.MapTypeId.ROADMAP,

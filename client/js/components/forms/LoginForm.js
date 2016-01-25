@@ -35,7 +35,7 @@ class LoginForm extends Component {
             <form onSubmit={ this.onSubmit.bind(this) }>
               <input type="email" placeholder="Email" onChange={ this.onStateChange.bind(this, 'email') } required />
               <input type="password" placeholder="Password" onChange={ this.onStateChange.bind(this, 'password') } required />
-              <button type="submit">Login</button>
+              <button className="button" type="submit">Login</button>
             </form>
           </section>
         </article>

@@ -35,6 +35,67 @@ class HomePage extends Component {
           </header>
 
           <section>
+            <h2>Form</h2>
+            <form>
+              <p>Input:</p>
+              <input type="text" name="name" tabindex="1" placeholder="text input" />
+              <input type="email" name="name" tabindex="1" placeholder="email input" />
+              <input type="password" name="name" tabindex="1" placeholder="password input" />
+
+              <label>
+                <p>Textarea:</p>
+                <textarea name="textarea"></textarea>
+              </label>
+
+              <fieldset>
+                <legend>Radio buttons</legend>
+                <label>
+                  Choice 1: <input type="radio" name="radio-choice[]" tabindex="2" value="choice-1" />
+                </label>
+                <label>
+                  Choice 2: <input type="radio" name="radio-choice[]" tabindex="3" value="choice-2" />
+                </label>
+                <label>
+                  <input type="radio" name="radio-choice[]" tabindex="2" value="choice-1" /> Choice 3
+                </label>
+                <label>
+                  <input type="radio" name="radio-choice[]" tabindex="3" value="choice-2" /> Choice 4
+                </label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Checkbox group</legend>
+                <label>
+                  Checkbox 1: <input type="checkbox" name="checkbox-choice[]" />
+                </label>
+                <label>
+                  Checkbox 2: <input type="checkbox" name="checkbox-choice[]" />
+                </label>
+                <label>
+                  <input type="checkbox" name="checkbox-choice[]" /> Checkbox 3
+                </label>
+                <label>
+                  <input type="checkbox" name="checkbox-choice[]" /> Checkbox 4
+                </label>
+              </fieldset>
+
+              <label>
+                <p>Select Dropdown:</p>
+                <select name="select-choice">
+                  <option value="Choice 1">Choice 1</option>
+                  <option value="Choice 2">Choice 2</option>
+                  <option value="Choice 3">Choice 3</option>
+                </select>
+              </label>
+
+              <p>Buttons</p>
+              <button className="button" type="submit">Submit</button>
+            </form>
+          </section>
+
+          <hr />
+
+          <section>
             <h2>Typography</h2>
 
             <h3>Text:</h3>
@@ -101,59 +162,6 @@ class HomePage extends Component {
             <p><img src="http://placehold.it/350x200" /></p>
             <p>Nam rhoncus nunc eget nisi mattis, id auctor diam hendrerit. <code>&lt;img src="http://placehold.it/350x150" /&gt;</code> Nulla eget imperdiet ante, quis imperdiet odio. Donec faucibus lorem sodales justo accumsan, id imperdiet quam placerat. Curabitur sed bibendum dui. Donec condimentum diam diam. Proin facilisis viverra libero sed dictum. Maecenas fermentum a velit id euismod. Vivamus in eros nec lacus malesuada sagittis nec at eros. Etiam nibh elit, semper sed vulputate eu, posuere vitae nibh. Praesent in vehicula est, id tristique risus. Aliquam erat volutpat. Nulla a erat neque.</p>
             <p>Nam rhoncus nunc eget nisi mattis, id auctor diam hendrerit. Nulla eget imperdiet ante, quis imperdiet odio. Donec faucibus lorem sodales justo accumsan, id imperdiet quam placerat. Curabitur sed bibendum dui. Donec condimentum diam diam. Proin facilisis viverra libero sed dictum. Maecenas fermentum a velit id euismod. Vivamus in eros nec lacus malesuada sagittis nec at eros. Etiam nibh elit, semper sed vulputate eu, posuere vitae nibh. Praesent in vehicula est, id tristique risus. Aliquam erat volutpat. Nulla a erat neque.</p>
-          </section>
-
-          <hr />
-
-          <section>
-            <h2>Form</h2>
-            <form>
-              <input type="text" placeholder="text input" />
-              <input type="text" placeholder="text input" />
-              <input type="text" placeholder="text input" />
-              <button type="submit">button</button>
-              <button type="submit">button</button>
-            </form>
-
-            <form action="#" method="post">
-                <div>
-                     <label for="name">Text Input:</label>
-                     <input type="text" name="name" id="name" value="" tabindex="1" />
-                </div>
-
-                <div>
-                     <h4>Radio Button Choice</h4>
-
-                     <label for="radio-choice-1">Choice 1</label>
-                     <input type="radio" name="radio-choice-1" id="radio-choice-1" tabindex="2" value="choice-1" />
-
-                 <label for="radio-choice-2">Choice 2</label>
-                     <input type="radio" name="radio-choice-2" id="radio-choice-2" tabindex="3" value="choice-2" />
-                </div>
-
-              <div>
-                <label for="select-choice">Select Dropdown Choice:</label>
-                <select name="select-choice" id="select-choice">
-                  <option value="Choice 1">Choice 1</option>
-                  <option value="Choice 2">Choice 2</option>
-                  <option value="Choice 3">Choice 3</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="textarea">Textarea:</label>
-                <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-              </div>
-
-              <div>
-                  <label for="checkbox">Checkbox:</label>
-                <input type="checkbox" name="checkbox" id="checkbox" />
-                </div>
-
-              <div>
-                  <input type="submit" value="Submit" />
-                </div>
-            </form>
           </section>
 
           <hr />
@@ -272,17 +280,17 @@ class HomePage extends Component {
             <h2>Panel</h2>
             <h3>HTML structure Required:</h3>
             <pre><code>
-&lt;div className='panel'&gt;Panel component&lt;/div&gt;
+&lt;div className="panel"&gt;Panel component&lt;/div&gt;
             </code></pre>
             <h3>Sample:</h3>
-            <div className='panel'>Panel component</div>
+            <div className="panel">Panel component</div>
           </section>
 
           <section>
             <h2>Collapsible</h2>
             <h3>HTML structure Required:</h3>
             <pre><code>
-&lt;article className='collapsible'&gt;<br/>
+&lt;article className="collapsible"&gt;<br/>
   &lt;header&gt;<br/>
     &lt;h1&gt;Header h1&lt;/h1&gt;<br/>
   &lt;/header&gt;<br/>
@@ -295,7 +303,7 @@ class HomePage extends Component {
 &lt;/article&gt;
             </code></pre>
             <h3>Sample:</h3>
-            <article className='collapsible'>
+            <article className="collapsible">
               <header>
                 <h1>Header h1 in the heaeder</h1>
               </header>
@@ -312,23 +320,23 @@ class HomePage extends Component {
             <h2>Navigation</h2>
             <h3>HTML structure Required:</h3>
             <pre><code>
-&lt;nav className='navigation'&gt;<br/>
+&lt;nav className="navigation"&gt;<br/>
   &lt;a href="#"&gt;Login&lt;/a&gt;<br/>
   &lt;a href="#"&gt;Register&lt;/a&gt;<br/>
 &lt;/nav&gt;
             </code></pre>
             <h3>Sample:</h3>
-            <nav className='navigation'>
+            <nav className="navigation">
               <a href="#">Login</a>
               <a href="#">Register</a>
             </nav>
           </section>
 
           <section>
-            <h2>Navigation</h2>
+            <h2>Alert and messages</h2>
             <h3>HTML structure Required:</h3>
             <pre><code>
-&lt;div className="alert errors"&gt;The following is VALID documentation&lt;/div&gt;
+&lt;div className="alert errors"&gt;Message&lt;/div&gt;
             </code></pre>
             <h3>Sample:</h3>
             <div className="alert errors">className="alert errors"</div>

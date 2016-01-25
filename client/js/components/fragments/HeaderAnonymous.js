@@ -7,8 +7,8 @@ class HeaderAnonymous extends Component {
     return (
       <div>
         <nav className="navigation">
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+          <Link className="button" to="/login">Login</Link>
+          <Link className="button" to="/register">Register</Link>
         </nav>
       </div>
     );

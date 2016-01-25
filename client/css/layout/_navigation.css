@@ -8,6 +8,8 @@
   color: $dark-grey;
   text-decoration: none;
   border: 1px solid $mid-grey;
+  width: auto;
+  font-weight: bold;
 }
 
 .navigation button {
