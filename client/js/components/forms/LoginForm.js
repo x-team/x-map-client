@@ -1,13 +1,12 @@
 import React, { Component, PropTypes } from 'react';
-import { Button, Input } from 'react-bootstrap';
 import ErrorList from '../forms/ErrorList';
 
 class LoginForm extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      email: this.props.email || '',
-      password: this.props.password || ''
+      email: '',
+      password: ''
     };
   }
 
@@ -17,36 +16,29 @@ class LoginForm extends Component {
     onSubmit(this.state.email, this.state.password, onSuccess);
   }
 
-  onEmailChange(e) {
-    this.setState({
-      email: e.target.value
-    });
-  }
+  onStateChange(field, e) {
+    let change = {};
+    change[field] = e.target.value;
 
-  onPasswordChange(e) {
-    this.setState({
-      password: e.target.value
-    });
+    this.setState(change);
   }
 
   render() {
-
     const { errors } = this.props;
 
     return (
-      <div>
-        <ErrorList errors={errors}/>
-        <form id="loginForm" onSubmit={this.onSubmit.bind(this)}>
-          <div className="row">
-            <Input type="email" placeholder="Email" addonBefore="@" onChange={this.onEmailChange.bind(this)} required/>
-          </div>
-          <div className="row">
-            <Input type="password" placeholder="Password" onChange={this.onPasswordChange.bind(this)} required/>
-          </div>
-          <div className="row">
-            <Button className="col-md-4 col-md-push-4 btn btn-success btn-sm" type="submit">Login</Button>
-          </div>
-        </form>
+      <div id="loginForm">
+        <article>
+          <section>
+            <h2>Login</h2>
+            <ErrorList errors={ errors } showFieldErrors={ true } />
+            <form onSubmit={ this.onSubmit.bind(this) }>
+              <input type="email" placeholder="Email" onChange={ this.onStateChange.bind(this, 'email') } required />
+              <input type="password" placeholder="Password" onChange={ this.onStateChange.bind(this, 'password') } required />
+              <button className="button" type="submit">Login</button>
+            </form>
+          </section>
+        </article>
       </div>
     );
   }

@@ -1,15 +1,16 @@
 import React, { Component, PropTypes } from 'react';
-import { Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 class HeaderAuthenticated extends Component {
   render() {
     const { user } = this.props;
     return (
-      <div className="row">
-        <h3 className="col-md-10">Hello {user.email}!</h3>
-        <div className="col-md-2 pull-right">
-          <Button className="btn btn-success pull-right" onClick={this.props.onLogout.bind(this, this.props.onLogoutSuccess)}>Logout</Button>
-        </div>
+      <div>
+        <nav className="navigation">
+          <Link className="button" to="/profiles">Profiles</Link>
+          <Link className="button" to={ '/profile/' + user.id }>My profile</Link>
+          <button className="button" onClick={ this.props.onLogout.bind(this, this.props.onLogoutSuccess) }>Logout</button>
+        </nav>
       </div>
     );
   }
