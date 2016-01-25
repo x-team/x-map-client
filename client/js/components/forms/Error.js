@@ -11,11 +11,10 @@ class Error extends Component {
     }
 
     return (
-      <div>
+      <div className="alert error">
         <strong>{fieldString}{error}</strong>
       </div>
     );
-
   }
 }
 
