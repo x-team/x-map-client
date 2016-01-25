@@ -29,17 +29,21 @@ class HomePage extends Component {
 
         <article>
           <header>
+            <div className="alert errors">The following is VALID documentation</div>
             <h1>Base content styles</h1>
+            <p>It is not expected complexity in the presentation of the content in this app, most of will be adressed in the map.</p>
           </header>
 
           <section>
             <h2>Typography</h2>
 
+            <h3>Text:</h3>
             <p>Normal paragraph text. <b>Bold text.</b> <i>Italic text.</i> <em>Emphasized text.</em> <code>Code text.</code> <big>Big text.</big> <small>Small text.</small> <del>Delete text.</del> <ins>Insert text.</ins></p>
             <p><kbd>Keyboard text.</kbd> Text to be entered by the user.</p>
             <p><dfn>Definition text.</dfn> To define the meaning of a word, phrase or term.</p>
             <p>Paragraph with break...<br />...line.</p>
 
+            <h3>Headings:</h3>
             <h1>Heading 1</h1>
             <h2>Heading 2</h2>
             <h3>Heading 3</h3>
@@ -47,6 +51,7 @@ class HomePage extends Component {
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
 
+            <h3>Monospace text:</h3>
             <pre><code>
             #header h1 a<br />
               display: block;<br />
@@ -54,12 +59,14 @@ class HomePage extends Component {
               height: 80px;<br />
             </code></pre>
 
+            <h3>Blockquote:</h3>
             <blockquote>
               <p>Paragraph in the blockquote.</p>
               <p>Paragraph in the blockquote. Lorem ipsum. Paragraph in the blockquote. Paragraph in the blockquote. Lorem ipsum. Paragraph in the blockquote. Paragraph in the blockquote.</p>
               <cite>Citation text in the blockquote.</cite>
             </blockquote>
 
+            <h3>Unordered list:</h3>
             <ul>
               <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
               <li>Aliquam tincidunt mauris eu risus.</li>
@@ -70,12 +77,14 @@ class HomePage extends Component {
               <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
             </ul>
 
+            <h3>Ordered List:</h3>
             <ol>
               <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
               <li>Aliquam tincidunt mauris eu risus.</li>
               <li>Vestibulum auctor dapibus neque.</li>
             </ol>
 
+            <h3>Definition list:</h3>
             <dl>
               <dt>Definition list</dt>
               <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -87,10 +96,14 @@ class HomePage extends Component {
               commodo consequat.</dd>
             </dl>
 
+            <h3>Long text sample:</h3>
             <p>Nam rhoncus nunc eget nisi mattis, <code>&lt;img /&gt;</code> id auctor diam hendrerit. Nulla eget imperdiet ante, quis imperdiet odio. Donec faucibus lorem sodales justo accumsan, id imperdiet quam placerat. Curabitur sed bibendum dui. Donec condimentum diam diam. Proin facilisis viverra libero sed dictum. Maecenas fermentum a velit id euismod. Vivamus in eros nec lacus malesuada sagittis nec at eros. Etiam nibh elit, semper sed vulputate eu, posuere vitae nibh. Praesent in vehicula est, id tristique risus. Aliquam erat volutpat. Nulla a erat neque.</p>
+            <p><img src="http://placehold.it/350x200" /></p>
             <p>Nam rhoncus nunc eget nisi mattis, id auctor diam hendrerit. <code>&lt;img src="http://placehold.it/350x150" /&gt;</code> Nulla eget imperdiet ante, quis imperdiet odio. Donec faucibus lorem sodales justo accumsan, id imperdiet quam placerat. Curabitur sed bibendum dui. Donec condimentum diam diam. Proin facilisis viverra libero sed dictum. Maecenas fermentum a velit id euismod. Vivamus in eros nec lacus malesuada sagittis nec at eros. Etiam nibh elit, semper sed vulputate eu, posuere vitae nibh. Praesent in vehicula est, id tristique risus. Aliquam erat volutpat. Nulla a erat neque.</p>
             <p>Nam rhoncus nunc eget nisi mattis, id auctor diam hendrerit. Nulla eget imperdiet ante, quis imperdiet odio. Donec faucibus lorem sodales justo accumsan, id imperdiet quam placerat. Curabitur sed bibendum dui. Donec condimentum diam diam. Proin facilisis viverra libero sed dictum. Maecenas fermentum a velit id euismod. Vivamus in eros nec lacus malesuada sagittis nec at eros. Etiam nibh elit, semper sed vulputate eu, posuere vitae nibh. Praesent in vehicula est, id tristique risus. Aliquam erat volutpat. Nulla a erat neque.</p>
           </section>
+
+          <hr />
 
           <section>
             <h2>Form</h2>
@@ -142,6 +155,8 @@ class HomePage extends Component {
                 </div>
             </form>
           </section>
+
+          <hr />
 
           <section>
             <h2>Tables</h2>
@@ -221,6 +236,8 @@ class HomePage extends Component {
             </table>
           </section>
 
+          <hr />
+
           <section>
             <h2>Media</h2>
 
@@ -265,7 +282,7 @@ class HomePage extends Component {
             <h2>Collapsible</h2>
             <h3>HTML structure Required:</h3>
             <pre><code>
-&lt;article className='collapsible panel'&gt;<br/>
+&lt;article className='collapsible'&gt;<br/>
   &lt;header&gt;<br/>
     &lt;h1&gt;Header h1&lt;/h1&gt;<br/>
   &lt;/header&gt;<br/>
@@ -278,7 +295,7 @@ class HomePage extends Component {
 &lt;/article&gt;
             </code></pre>
             <h3>Sample:</h3>
-            <article className='collapsible panel'>
+            <article className='collapsible'>
               <header>
                 <h1>Header h1 in the heaeder</h1>
               </header>
@@ -305,6 +322,18 @@ class HomePage extends Component {
               <a href="#">Login</a>
               <a href="#">Register</a>
             </nav>
+          </section>
+
+          <section>
+            <h2>Navigation</h2>
+            <h3>HTML structure Required:</h3>
+            <pre><code>
+&lt;div className="alert errors"&gt;The following is VALID documentation&lt;/div&gt;
+            </code></pre>
+            <h3>Sample:</h3>
+            <div className="alert errors">className="alert errors"</div>
+            <div className="alert">className="alert"</div>
+            <div className="errors">className="errors"</div>
           </section>
 
         </article>
