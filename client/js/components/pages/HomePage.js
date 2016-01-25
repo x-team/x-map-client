@@ -30,15 +30,14 @@ class HomePage extends Component {
         <article>
           <header>
             <h1>Base content styles</h1>
-            <p>will have here an arrow for collapsible behavior</p>
           </header>
 
           <section>
             <h2>Typography</h2>
 
             <p>Normal paragraph text. <b>Bold text.</b> <i>Italic text.</i> <em>Emphasized text.</em> <code>Code text.</code> <big>Big text.</big> <small>Small text.</small> <del>Delete text.</del> <ins>Insert text.</ins></p>
-            <p><kbd>Keyboard text - text to be entered by the user.</kbd></p>
-            <p><dfn>Definition.</dfn>: To define the meaning of a word, phrase or term.</p>
+            <p><kbd>Keyboard text.</kbd> Text to be entered by the user.</p>
+            <p><dfn>Definition text.</dfn> To define the meaning of a word, phrase or term.</p>
             <p>Paragraph with break...<br />...line.</p>
 
             <h1>Heading 1</h1>
@@ -216,6 +215,53 @@ class HomePage extends Component {
               <p>Fallback content goes here.</p>
             </audio>
           </section>
+        </article>
+
+        <hr />
+
+        <article>
+          <header>
+            <h1>Base layout components styles</h1>
+            <p>will have here an arrow for collapsible behavior</p>
+          </header>
+
+          <section>
+            <h2>Panel</h2>
+            <h3>HTML structure Required</h3>
+            <pre><code>
+&lt;div className={ 'panel' }&gt;&lt;/div&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Collapsible</h2>
+            <h3>HTML structure Required</h3>
+            <pre><code>
+&lt;article&gt;<br/>
+  &lt;header&gt;<br/>
+    &lt;h1&gt;Header h1&lt;/h1&gt;<br/>
+  &lt;/header&gt;<br/>
+  &lt;section&gt;<br/>
+    &lt;h2&gt;Header h2&lt;/h2&gt;<br/>
+  &lt;/section&gt;<br/>
+  &lt;footer&gt;<br/>
+    &lt;h2&gt;Header h2&lt;/h2&gt;<br/>
+  &lt;/footer&gt;<br/>
+&lt;/article&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Navigation</h2>
+            <h3>HTML structure Required</h3>
+            <pre><code>
+&lt;nav&gt;<br/>
+  &lt;a href="#"&gt;Login&lt;/a&gt;<br/>
+  &lt;a href="#"&gt;Register&lt;/a&gt;<br/>
+&lt;/nav&gt;
+            </code></pre>
+          </section>
+
         </article>
       </div>
     );
