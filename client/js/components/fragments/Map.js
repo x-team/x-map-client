@@ -42,17 +42,17 @@ class Map extends Component {
         google.maps.MapTypeId.SATELLITE,
         google.maps.MapTypeId.TERRAIN
       ],
-      scaleControl: true,
-      mapTypeControl: true,
+      scaleControl: false,
+      mapTypeControl: false,
       mapTypeControlOptions: {
         style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
         position: google.maps.ControlPosition.LEFT_BOTTOM
       },
-      streetViewControl: true,
+      streetViewControl: false,
       streetViewControlOptions: {
         position: google.maps.ControlPosition.LEFT_BOTTOM
       },
-      zoomControl: true,
+      zoomControl: false,
       zoomControlOptions: {
         position: google.maps.ControlPosition.LEFT_BOTTOM
       }
