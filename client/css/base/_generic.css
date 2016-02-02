@@ -1,0 +1,15 @@
+/* Generic */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $text-font-stack;
+  overflow: hidden;
+}

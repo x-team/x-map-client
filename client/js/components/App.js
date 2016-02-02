@@ -6,7 +6,7 @@ import * as UserActions from '../actions/UserActions';
 import * as TeamActions from '../actions/TeamActions';
 import assignToEmpty from '../utils/assign';
 import Header from './fragments/Header';
-import HeaderLoading from './fragments/HeaderLoading';
+import Loading from './fragments/Loading';
 import Map from './fragments/Map';
 
 class App extends Component {
@@ -37,18 +37,17 @@ class App extends Component {
     let app;
     if (currentUserLoaded && (!currentUserId || (usersLoaded && teamsLoaded))) {
       app = (
-        <section>
+        <div>
           <Header user={users[currentUserId]} onLogout={actions.logout.bind(null, this.redirectToHomePage.bind(this))}/>
           { this.props.children }
           <Map onFeatureClick={this.redirectToProfilePage.bind(this)}/>
-        </section>
+        </div>
       );
     } else {
       app = (
-        <section>
-          <HeaderLoading/>
-          <Map />
-        </section>
+        <div>
+          <Loading />
+        </div>
       );
     }
 
