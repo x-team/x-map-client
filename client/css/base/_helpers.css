@@ -5,6 +5,12 @@
   max-height: none;
 }
 
-.center {
-  text-align: center;
+.horizontal-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.horizontal-list li {
+  display: inline-block;
 }

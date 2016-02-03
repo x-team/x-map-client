@@ -16,7 +16,7 @@
 $size: 500px;
 .panel.panel-homescreen {
   width: $size;
-  height: calc($size - 40px);
+  height: $size;
   position: fixed;
   top: calc(50% - ($size / 2));
   left: calc(50% - ($size / 2));
@@ -85,7 +85,6 @@ $size: 500px;
   margin-top: 20px;
 }
 
-.panel article > header > *:last-child,
 .panel article > section > *:last-child {
   margin-bottom: 40px;
 }
