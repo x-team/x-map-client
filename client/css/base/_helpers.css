@@ -1,0 +1,10 @@
+/* Helpers */
+
+#map img {
+  max-width: none;
+  max-height: none;
+}
+
+.center {
+  text-align: center;
+}
