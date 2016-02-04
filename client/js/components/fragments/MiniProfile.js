@@ -31,8 +31,8 @@ class MiniProfile extends Component {
 
   render() {
     const { user } = this.props;
-    let fullName = this.getFullName(user);
-    let avatar = this.getAvatar(user);
+    const fullName = this.getFullName(user);
+    const avatar = this.getAvatar(user);
 
     return (
       <span>
