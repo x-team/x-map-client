@@ -5,38 +5,14 @@ import DefaultAvatar from '../../../img/avatar.jpg';
 import 'file?name=[name].[ext]!../../../img/avatar.jpg';
 
 class MiniProfile extends Component {
-  getFullName(user) {
-    let fullName;
-    if (user.firstName && user.lastName) {
-      fullName = `${user.firstName} ${user.lastName} (${user.email})`;
-    } else if (!user.firstName && user.lastName) {
-      fullName = `${user.lastName} (${user.email})`;
-    } else if (user.firstName && !user.lastName) {
-      fullName = `${user.firstName} (${user.email})`;
-    } else {
-      fullName = user.email;
-    }
-    return fullName;
-  }
-
-  getAvatar(user) {
-    let avatar;
-    if (user.avatar) {
-      avatar = user.avatar;
-    } else {
-      avatar = DefaultAvatar;
-    }
-    return avatar;
-  }
-
   render() {
     const { user } = this.props;
-    const fullName = this.getFullName(user);
-    const avatar = this.getAvatar(user);
-
     return (
       <span>
-        <Link to={`/profile/${user.id}`} title={fullName}><img src={avatar} alt={fullName}/></Link>
+        <Link to={`/profile/${user.id}`} title={'${user.firstName} ${user.lastName}'}>
+          <img src={user.avatar || DefaultAvatar} alt={'${user.firstName} ${user.lastName}'}/>
+          <p>{user.firstName} {user.lastName}</p>
+        </Link>
       </span>
     );
   }
