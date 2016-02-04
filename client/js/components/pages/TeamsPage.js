@@ -30,7 +30,7 @@ class TeamsPage extends Component {
     }
 
     if (!teamProfiles.length) {
-      teamProfiles.push(<p className="alert error">Something gone wrong, none profile found.</p>);
+      teamProfiles.push(<p className="alert">No teams yet.</p>);
     }
 
     let adminMenu = null;

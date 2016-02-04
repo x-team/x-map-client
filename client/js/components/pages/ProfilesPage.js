@@ -26,7 +26,7 @@ class ProfilesPage extends Component {
     }
 
     if (!profiles.length) {
-      profiles.push(<p className="alert error">Something gone wrong, none profile found.</p>);
+      profiles.push(<p className="alert error">Something has gone wrong. No profiles found.</p>);
     }
 
     return (

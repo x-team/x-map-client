@@ -5,9 +5,7 @@ import DefaultAvatar from '../../../img/avatar.jpg';
 import 'file?name=[name].[ext]!../../../img/avatar.jpg';
 
 class MiniProfile extends Component {
-  render() {
-    const { user } = this.props;
-
+  getFullName(user) {
     let fullName;
     if (user.firstName && user.lastName) {
       fullName = `${user.firstName} ${user.lastName} (${user.email})`;
@@ -18,13 +16,23 @@ class MiniProfile extends Component {
     } else {
       fullName = user.email;
     }
+    return fullName;
+  }
 
+  getAvatar(user) {
     let avatar;
     if (user.avatar) {
       avatar = user.avatar;
     } else {
       avatar = DefaultAvatar;
     }
+    return avatar;
+  }
+
+  render() {
+    const { user } = this.props;
+    let fullName = this.getFullName(user);
+    let avatar = this.getAvatar(user);
 
     return (
       <span>

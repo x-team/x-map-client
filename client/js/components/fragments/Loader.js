@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 
 import Logo from '../../../img/xteam-vertical.png';
 import 'file?name=[name].[ext]!../../../img/xteam-vertical.png';
 
-class Loading extends Component {
+class Loader extends Component {
   render() {
     return (
       <div id="loading" className="panel panel-homescreen">
@@ -21,4 +20,4 @@ class Loading extends Component {
   }
 }
 
-export default Loading;
+export default Loader;
