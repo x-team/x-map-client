@@ -5,11 +5,16 @@ class MiniTeam extends Component {
   render() {
     const { team } = this.props;
 
+    let description = null;
+    if (team.description) {
+      description = <p>{team.description}</p>;
+    }
+
     return (
-      <div>
-        {team.name}
-        <Link to={`/team/${team.id}`}>View</Link>
-      </div>
+      <span>
+        <h3><Link to={`/team/${team.id}`}>{team.name}</Link></h3>
+        {description}
+      </span>
     );
   }
 }
