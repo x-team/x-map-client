@@ -19,6 +19,7 @@ import TeamAddPage from './components/pages/TeamAddPage';
 import App from './components/App';
 
 // Import the CSS file, which HtmlWebpackPlugin transfers to the build folder
+import '!style!css!sass!../css/setup.scss';
 import '../css/main.css';
 
 import 'file?name=[name].[ext]!../img/favicon.png';
