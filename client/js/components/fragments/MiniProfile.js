@@ -12,7 +12,7 @@ class MiniProfile extends Component {
     if (user.avatar) {
       avatar = (
         <span className="media-left">
-          <img className="media-object" src={user.avatar} alt={`${user.firstName} ${user.lastName}`}/>
+          <img className="media-object img-circle" src={user.avatar} alt={`${user.firstName} ${user.lastName}`}/>
         </span>
       );
     }

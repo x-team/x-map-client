@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
 import ErrorList from '../forms/ErrorList';
 
 class TeamForm extends Component {
@@ -19,29 +20,35 @@ class TeamForm extends Component {
 
   render() {
     const { errors } = this.props;
-
-    let header = <h3>Add team</h3>;
-    if (this.state.id) {
-      header = <h3>Edit team #{this.state.id}</h3>;
-    }
-
     return (
-      <div>
+      <div id="TeamForm">
         <ErrorList errors={errors} showFieldErrors/>
-        {header}
-        <form id="teamEditForm" onSubmit={this.onSubmit.bind(this)}>
-          <div className="row">
-            <input type="text" placeholder="Name" value={this.state.name} minLength="2" maxLength="32" onChange={this.onInputChange.bind(this, 'name')} required/>
-          </div>
-          <div className="row">
-            <input type="text" placeholder="Summary" value={this.state.summary} maxLength="128" onChange={this.onInputChange.bind(this, 'summary')} required/>
-          </div>
-          <div className="row">
-            <textarea placeholder="Description" value={this.state.description} maxLength="1024" onChange={this.onInputChange.bind(this, 'description')}/>
-          </div>
-          <div className="row">
-            <button className="button" type="submit">Save</button>
-          </div>
+        <form onSubmit={this.onSubmit.bind(this)}>
+
+          <fieldset className="form-group">
+            <label>Team name*</label>
+            <input type="text" className="form-control" placeholder="Name" value={this.state.name}
+              minLength="2" maxLength="32" onChange={this.onInputChange.bind(this, 'name')} required/>
+            <small className="text-muted">Max length 32 chars.</small>
+          </fieldset>
+
+          <fieldset className="form-group">
+            <label>Short summary*</label>
+            <input type="text" className="form-control" placeholder="Summary" value={this.state.summary}
+              maxLength="128" onChange={this.onInputChange.bind(this, 'summary')} required/>
+            <small className="text-muted">Max length 128 chars.</small>
+          </fieldset>
+
+          <fieldset className="form-group">
+            <label>Long description</label>
+            <textarea className="form-control" placeholder="Description" value={this.state.description}
+              maxLength="1024" onChange={this.onInputChange.bind(this, 'description')}/>
+            <small className="text-muted">Max length 1024 chars.</small>
+          </fieldset>
+
+          <fieldset className="form-group">
+            <button className="btn btn-primary" type="submit">Save</button> <Link className="btn btn-secondary" to={`/team/${this.state.id}`} title={this.state.name}>Cancel</Link>
+          </fieldset>
         </form>
       </div>
     );
