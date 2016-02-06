@@ -26,50 +26,49 @@ class ProfileForm extends Component {
         <ErrorList errors={errors} showFieldErrors/>
         <form onSubmit={this.onSubmit.bind(this)}>
           <fieldset className="form-group">
-            <label>blabla</label>
+            <label>Email*</label>
             <input type="email" className="form-control" placeholder="Email" value={this.state.email}
               onChange={this.onInputChange.bind(this, 'email')} required/>
-            <small className="text-muted">Max length 32 chars.</small>
           </fieldset>
 
           <fieldset className="form-group">
-            <label>blabla</label>
+            <label>First name*</label>
             <input type="text" className="form-control" placeholder="First name" value={this.state.firstName}
               onChange={this.onInputChange.bind(this, 'firstName')} required/>
           </fieldset>
 
           <fieldset className="form-group">
-            <label>blabla</label>
+            <label>Last name*</label>
             <input type="text" className="form-control" placeholder="Last name" value={this.state.lastName}
               onChange={this.onInputChange.bind(this, 'lastName')} required/>
           </fieldset>
 
           <fieldset className="form-group">
-            <label>blabla</label>
+            <label>Skype ID</label>
             <input type="text" className="form-control" placeholder="Skype ID" value={this.state.skypeId}
               onChange={this.onInputChange.bind(this, 'skypeId')}/>
           </fieldset>
 
           <fieldset className="form-group">
-            <label>blabla</label>
+            <label>Slack ID</label>
             <input type="text" className="form-control" placeholder="Slack ID" value={this.state.slackId}
               onChange={this.onInputChange.bind(this, 'slackId')}/>
           </fieldset>
 
           <fieldset className="form-group">
-            <label>blabla</label>
+            <label>Website</label>
             <input type="text" className="form-control" placeholder="Website" value={this.state.website}
               onChange={this.onInputChange.bind(this, 'website')}/>
           </fieldset>
 
           <fieldset className="form-group">
-            <label>blabla</label>
+            <label>Nationality</label>
             <input type="text" className="form-control" placeholder="Nationality" value={this.state.nationality}
               onChange={this.onInputChange.bind(this, 'nationality')}/>
           </fieldset>
 
           <fieldset className="form-group">
-            <label>blabla</label>
+            <label>About me</label>
             <textarea className="form-control" placeholder="About me" value={this.state.aboutMe}
               onChange={this.onInputChange.bind(this, 'aboutMe')}/>
           </fieldset>

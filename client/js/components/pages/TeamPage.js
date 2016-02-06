@@ -51,18 +51,18 @@ class TeamPage extends Component {
     return (
       <DocumentTitle title={`Team: ${team.name} | X-Map`}>
         <article id="TeamPage" className="panel card">
-          <header className="card-header">
-            <h4 className="card-title">{team.name}</h4>
+          <div className="card-header">
+            <h2 className="card-title">{team.name}</h2>
             <p className="card-subtitle">Team profile</p>
             <p className="text-muted">#{team.id}</p>
             <div className="btn-group" role="group" aria-label="Actions menu">
               {editLink}{deleteButton}
             </div>
-          </header>
+          </div>
 
-          <section className="card-block">
+          <div className="card-block">
             <Team team={team}/>
-          </section>
+          </div>
         </article>
       </DocumentTitle>
     );

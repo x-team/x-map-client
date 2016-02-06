@@ -16,14 +16,14 @@ class TeamAddPage extends Component {
     return (
       <DocumentTitle title="Add team | X-Map">
         <article id="TeamAddPage" className="panel card">
-          <header className="card-header">
-            <h4 className="card-title">Add team</h4>
+          <div className="card-header">
+            <h2 className="card-title">Add team</h2>
             <p className="card-subtitle">Create new team then edit the team to add people.</p>
-          </header>
+          </div>
 
-          <section className="card-block">
+          <div className="card-block">
             <TeamForm onSubmit={actions.teamCreate} onSuccess={this.redirectToTeamsPage.bind(this)} errors={errors}/>
-          </section>
+          </div>
         </article>
       </DocumentTitle>
     );

@@ -32,9 +32,8 @@ class Map extends Component {
 
   configureMap(google) {
     this.map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 0, lng: 50},
-      zoom: 2,
-      minZoom: 2,
+      center: {lat: 0, lng: 0},
+      zoom: 3,
       mapTypeId: google.maps.MapTypeId.HYBRID,
       mapTypeIds: [
         google.maps.MapTypeId.HYBRID,

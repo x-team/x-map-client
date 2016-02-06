@@ -21,7 +21,7 @@ class MiniProfile extends Component {
       <Link className="miniProfile media" to={`/profile/${user.id}`} title={`${user.firstName} ${user.lastName}`}>
         {avatar}
         <span className="media-body">
-          <h4 className="media-heading">{user.firstName} {user.lastName}</h4>
+          <h3 className="media-heading">{user.firstName} {user.lastName}</h3>
           <p>{user.email}</p>
         </span>
       </Link>

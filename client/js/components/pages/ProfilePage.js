@@ -28,8 +28,19 @@ class ProfilePage extends Component {
       return <span/>;
     }
 
-    let editLink;
-    let setLocationLink;
+    // Use some better picture in this place
+    let poster = null;
+    if (user.avatar) {
+      poster = (
+        <div className="card-img-top text-xs-center">
+          <img src={user.avatar} data-src={user.avatar}
+            alt={`${user.firstName} ${user.lastName}`}/>
+        </div>
+      );
+    }
+
+    let editLink = null;
+    let setLocationLink = null;
     if (isAdmin || user.id === currentUserId) {
       editLink = <Link className="btn btn-secondary btn-sm" to={`/profile/${user.id}/edit`}>Edit profile</Link>;
       setLocationLink = <Link className="btn btn-secondary btn-sm" to={`/profile/${user.id}/location`}>Set location</Link>;
@@ -45,18 +56,19 @@ class ProfilePage extends Component {
     return (
       <DocumentTitle title={`Profile: ${user.firstName} ${user.lastName} | X-Map`}>
         <article id="ProfilePage" className="panel card">
-          <header className="card-header">
-            <h4 className="card-title">{user.firstName} {user.lastName}</h4>
+          {poster}
+          <div className="card-header">
+            <h2 className="card-title">{user.firstName} {user.lastName}</h2>
             <p className="card-subtitle">Profile page</p>
             <p className="text-muted">#{user.id}</p>
             <div className="btn-group" role="group" aria-label="Actions menu">
               {editLink}{setLocationLink}{adminLink}
             </div>
-          </header>
+          </div>
 
-          <section className="card-block">
+          <div className="card-block">
             <Profile user={user}/>
-          </section>
+          </div>
         </article>
       </DocumentTitle>
     );

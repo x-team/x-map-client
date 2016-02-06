@@ -25,3 +25,7 @@
 .panel .media-body *:last-child {
   margin-bottom: 0;
 }
+
+.panel h3.media-heading {
+  font-size: 1.5rem;
+}

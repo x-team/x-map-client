@@ -6,20 +6,20 @@ import 'file?name=[name].[ext]!../../../img/xteam-vertical.png';
 
 class Loader extends Component {
   render() {
-    let content = <p>Loading application data...</p>;
+    let content = <p className="text-xs-center">Loading application data...</p>;
     if (!this.props.isSignedIn) {
       content = <SignInButton/>;
     }
 
     return (
       <article id="Loader" className="panel panel-homescreen card">
-        <section className="card-block">
-          <h1><img className="logo" src={Logo} alt="X-Team"/></h1>
-          <h2>Welcome to X-Map</h2>
-          <p>An <a href="https://github.com/x-team/x-map/" target="_blank">open source</a> project at <a
+        <div className="card-block">
+          <h2 className="text-xs-center"><img className="logo" src={Logo} alt="X-Team"/></h2>
+          <p className="text-xs-center text-uppercase"><strong>Welcome to X-Map</strong></p>
+          <p className="text-xs-center">An <a href="https://github.com/x-team/x-map/" target="_blank">open source</a> project at <a
             href="http://x-team.com/community/" target="_blank">X-Team</a></p>
           {content}
-        </section>
+        </div>
       </article>
     );
   }

@@ -22,7 +22,7 @@ class ErrorList extends Component {
     }
 
     return (
-      <div className="alert error">
+      <div className="alert alert-warning" role="alert">
         {errorList}
       </div>
     );

@@ -2,8 +2,15 @@
   z-index: 9;
 }
 
-#header #logo {
-  line-height: 30px;
+#header #logo h1 {
+  font-size: 1rem;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+#header #logo span {
+  transform: translateY(3px);
+  display: inline-block;
 }
 
 #header #logo img {

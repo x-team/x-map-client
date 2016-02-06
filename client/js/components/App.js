@@ -60,6 +60,7 @@ class App extends Component {
 
     return (
       <div>
+        <h1 className="sr-only sr-only-focusable">X-Map</h1>
         {content}
         <Map onFeatureClick={this.redirectToProfilePage.bind(this)}/>
       </div>

@@ -14,18 +14,20 @@ class Header extends Component {
         <header id="header">
 
           <nav className="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
+            <h2 className="sr-only sr-only-focusable">Name of the page need to go here</h2>
+
             <Link id="logo" className="navbar-brand" to="/">
-              <img className="logo" src={Logo} alt="X-Map"/>X-Map
+              <img className="logo" src={Logo} alt="X-Map"/> X-Map
             </Link>
 
             <ul className="nav navbar-nav pull-xs-right">
-              <li className="nav-item active">
-                <Link className="nav-link" to="/profiles">Profiles <span className="sr-only">(current)</span></Link>
+              <li className="nav-item">
+                <Link className="nav-link" to="/profiles">Profiles</Link>
               </li>
-              <li className="nav-item active">
+              <li className="nav-item">
                 <Link className="nav-link" to="/teams">Teams</Link>
               </li>
-              <li className="nav-item active">
+              <li className="nav-item">
                 <div className="dropdown">
                   <button className="btn btn-secondary dropdown-toggle" type="button" id="myprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     My Profiile

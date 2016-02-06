@@ -39,16 +39,16 @@ class TeamEditPage extends Component {
     return (
       <DocumentTitle title={`Edit team: ${team.name} | X-Map`}>
         <article id="TeamEditPage" className="panel card">
-          <header className="card-header">
-            <h4 className="card-title">{team.name}</h4>
+          <div className="card-header">
+            <h2 className="card-title">{team.name}</h2>
             <p className="card-subtitle">Edit team</p>
             <Link className="text-muted" to={`/team/${team.id}`} title={`Go to ${team.name} team page`}>#{team.id}</Link>
-          </header>
+          </div>
 
-          <section className="card-block">
+          <div className="card-block">
             <TeamForm team={team} onSubmit={actions.teamUpdate}
               onSuccess={this.redirectToTeamPage.bind(this, params.id)} errors={errors}/>
-          </section>
+          </div>
         </article>
       </DocumentTitle>
     );
