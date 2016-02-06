@@ -1,0 +1,58 @@
+import React, { Component } from 'react';
+
+class ProfileInformations extends Component {
+  render() {
+    const { user } = this.props;
+
+    return (
+      <div id="ProfileInformations" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
+        <section className="panel panel-default">
+          <header href="#" className="panel-heading list-group-item-heading" role="tab" id="ProfileHeading">
+            <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileInformations" href="#ProfileInformationsCollapse"
+              aria-expanded="true" aria-controls="ProfileInformationsCollapse">Informations...</h4>
+          </header>
+
+          <section id="ProfileInformationsCollapse" className="panel-collapse collapse in list-group-item-text"
+            role="tabpanel" aria-labelledby="LinkedTeamsHeading">
+            <div>
+              <label className="input-group">
+                <h5 className="input-group-addon">First name</h5>
+                <div className="form-control">{user.firstName}</div>
+              </label>
+              <label className="input-group">
+                <h5 className="input-group-addon">Last Name</h5>
+                <div className="form-control">{user.lastName}</div>
+              </label>
+              <label className="input-group">
+                <h5 className="input-group-addon">Email</h5>
+                <div className="form-control">{user.email}</div>
+              </label>
+              <label className="input-group">
+                <h5 className="input-group-addon">Skype ID</h5>
+                <div className="form-control">{user.skypeId}</div>
+              </label>
+              <label className="input-group">
+                <h5 className="input-group-addon">Slack ID</h5>
+                <div className="form-control">{user.slackId}</div>
+              </label>
+              <label className="input-group">
+                <h5 className="input-group-addon">Website</h5>
+                <div className="form-control">{user.website}</div>
+              </label>
+              <label className="input-group">
+                <h5 className="input-group-addon">Nationality</h5>
+                <div className="form-control">{user.nationality}</div>
+              </label>
+              <label className="input-group">
+                <h5 className="input-group-addon">About me</h5>
+                <div className="form-control">{user.aboutMe}</div>
+              </label>
+            </div>
+          </section>
+        </section>
+      </div>
+    );
+  }
+}
+
+export default ProfileInformations;
