@@ -1,9 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
-import DefaultAvatar from '../../../img/avatar.jpg';
-import 'file?name=[name].[ext]!../../../img/avatar.jpg';
-
 class MiniProfile extends Component {
   render() {
     const { user } = this.props;

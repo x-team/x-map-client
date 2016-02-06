@@ -31,7 +31,7 @@ class Map extends Component {
   }
 
   configureMap(google) {
-    this.map = new google.maps.Map(document.getElementById('map'), {
+    this.map = new google.maps.Map(document.getElementById('Map'), {
       center: {lat: 0, lng: 0},
       zoom: 3,
       mapTypeId: google.maps.MapTypeId.HYBRID,
@@ -117,7 +117,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div id="map"></div>
+      <div id="Map"></div>
     );
   }
 }

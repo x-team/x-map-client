@@ -17,6 +17,14 @@ class Profile extends Component {
     let profileInformation = (
       <div>
         <label className="input-group">
+          <h5 className="input-group-addon">First name</h5>
+          <div className="form-control">{user.firstName}</div>
+        </label>
+        <label className="input-group">
+          <h5 className="input-group-addon">Last Name</h5>
+          <div className="form-control">{user.lastName}</div>
+        </label>
+        <label className="input-group">
           <h5 className="input-group-addon">Email</h5>
           <div className="form-control">{user.email}</div>
         </label>

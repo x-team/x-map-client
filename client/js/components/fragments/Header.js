@@ -11,7 +11,7 @@ class Header extends Component {
     let header = null;
     if (user && user.id) {
       header = (
-        <header id="header">
+        <header id="Header">
 
           <nav className="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
             <h2 className="sr-only sr-only-focusable">Name of the page need to go here</h2>
@@ -27,13 +27,15 @@ class Header extends Component {
               <li className="nav-item">
                 <Link className="nav-link" to="/teams">Teams</Link>
               </li>
+
               <li className="nav-item">
-                <div className="dropdown">
-                  <button className="btn btn-secondary dropdown-toggle" type="button" id="myprofile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    My Profiile
+                <div className="btn-group">
+                  <Link className="btn btn-secondary" to={'/profile/' + user.id}>My profile</Link>
+                  <button type="button" className="btn btn-secondary dropdown-toggle"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span className="sr-only">Toggle Dropdown</span>
                   </button>
-                  <div className="dropdown-menu dropdown-menu-right" aria-labelledby="myprofile">
-                    <Link className="dropdown-item" to={'/profile/' + user.id}>View my profile</Link>
+                  <div className="dropdown-menu">
                     <a className="dropdown-item" onClick={onLogout}>Logout</a>
                   </div>
                 </div>

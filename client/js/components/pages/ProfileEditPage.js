@@ -44,7 +44,7 @@ class ProfileEditPage extends Component {
 
           <div className="card-block">
             <ProfileForm user={user} onSubmit={actions.userUpdate}
-             onSuccess={this.redirectToProfilePage.bind(this, params.id)} errors={errors}/>
+              onSuccess={this.redirectToProfilePage.bind(this, params.id)} errors={errors}/>
           </div>
         </article>
       </DocumentTitle>
