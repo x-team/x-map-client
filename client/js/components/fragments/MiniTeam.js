@@ -11,13 +11,12 @@ class MiniTeam extends Component {
     }
 
     return (
-      <span className="media">
+      <Link className="miniTeam media" to={`/team/${team.id}`} title={team.name}>
         <span className="media-body">
           <h4 className="media-heading">{team.name}</h4>
-          <Link to={`/team/${team.id}`} title={team.name}>go</Link>
           {summary}
         </span>
-      </span>
+      </Link>
     );
   }
 }

@@ -4,8 +4,6 @@ import { Link } from 'react-router';
 import DefaultAvatar from '../../../img/avatar.jpg';
 import 'file?name=[name].[ext]!../../../img/avatar.jpg';
 
-import '../../../css/components/fragments/_miniProfile.css';
-
 class MiniProfile extends Component {
   render() {
     const { user } = this.props;

@@ -33,7 +33,7 @@ class ProfilesPage extends Component {
 
     return (
       <DocumentTitle title="Profiles | X-Map">
-        <article id="userProfiles" className="panel card">
+        <article className="panel card">
           <header className="card-block">
             <h4 className="card-title">Profiles</h4>
             <p className="card-subtitle text-muted">Listing all profiles</p>
