@@ -55,16 +55,16 @@ class ProfilePage extends Component {
 
     return (
       <DocumentTitle title={`Profile: ${user.firstName} ${user.lastName} | X-Map`}>
-        <article id="ProfilePage" className="panel card">
+        <article id="ProfilePage" className="page card">
           {poster}
-          <div className="card-header">
-            <h2 className="card-title">{user.firstName} {user.lastName}</h2>
+          <header className="card-header">
+            <h3 className="card-title">{user.firstName} {user.lastName}</h3>
             <p className="card-subtitle">Profile page</p>
             <p className="text-muted">#{user.id}</p>
             <div className="btn-group" role="group" aria-label="Actions menu">
               {editLink}{setLocationLink}{adminLink}
             </div>
-          </div>
+          </header>
 
           <div className="card-block">
             <Profile user={user}/>

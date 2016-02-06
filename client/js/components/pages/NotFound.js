@@ -7,7 +7,7 @@ class NotFound extends Component {
     return (
       <DocumentTitle title="Page Not Found | X-Map">
         <article id="NotFound" className="panel card card-block">
-          <h2 className="card-title">Page not found.</h2>
+          <h3 className="card-title">Page not found.</h3>
           <p className="card-subtitle">Feeling lost?</p>
           <Link className="card-link" to="/">Go Home</Link>
         </article>

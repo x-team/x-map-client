@@ -17,17 +17,23 @@ class Team extends Component {
     let listOfUserProfiles;
     if (userProfiles.length) {
       listOfUserProfiles = (
-        <section>
-          <h3>Linked users:</h3>
-          <ul className="list-group list-group-flush">
-            {userProfiles}
-          </ul>
+        <section id="LinkedUsers" className="panel panel-default">
+          <header className="panel-heading" role="tab" id="LinkedUsersHeading">
+            <h4 className="panel-title" data-toggle="collapse" data-parent="#accordion" href="#LinkedUsersCollapse"
+              aria-expanded="true" aria-controls="LinkedUsersCollapse">Linked Users</h4>
+          </header>
+          <section id="LinkedUsersCollapse" className="panel-collapse collapse in"
+            role="tabpanel" aria-labelledby="LinkedUsersHeading">
+            <ul className="list-group list-group-flush">
+              {userProfiles}
+            </ul>
+          </section>
         </section>
       );
     }
 
     return (
-      <section>
+      <div id="Team">
         <table>
           <tbody>
             <tr>
@@ -45,9 +51,10 @@ class Team extends Component {
           </tbody>
         </table>
 
-        {listOfUserProfiles}
-
-      </section>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+          {listOfUserProfiles}
+        </div>
+      </div>
     );
   }
 }

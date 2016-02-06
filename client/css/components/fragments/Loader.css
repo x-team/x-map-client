@@ -1,5 +1,5 @@
 $size: 500px;
-.panel.panel-homescreen {
+#Loader {
   width: $size;
   min-height: $size;
   position: fixed;
@@ -13,11 +13,11 @@ $size: 500px;
   color: white;
 }
 
-.panel.panel-homescreen h2 {
+#Loader h2 {
   margin-bottom: 30px;
 }
 
-.panel.panel-homescreen #g-signin2 {
+#Loader #g-signin2 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;

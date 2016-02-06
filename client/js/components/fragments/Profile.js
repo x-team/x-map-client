@@ -7,21 +7,33 @@ class Profile extends Component {
 
     const teamProfiles = [];
     for (const id in user.teams) {
-      teamProfiles.push(<MiniTeam key={id} team={user.teams[id]}/>);
+      teamProfiles.push(
+        <li className="list-group-item" key={id}>
+          <MiniTeam team={user.teams[id]}/>
+        </li>
+      );
     }
 
     let listOfTeamProfiles;
     if (teamProfiles.length) {
       listOfTeamProfiles = (
-        <section>
-          <h3>Linked teams:</h3>
-          {teamProfiles}
+        <section id="LinkedTeams" className="panel panel-default">
+          <header className="panel-heading" role="tab" id="LinkedTeamsHeading">
+            <h4 className="panel-title" data-toggle="collapse" data-parent="#accordion" href="#LinkedTeamsCollapse"
+              aria-expanded="true" aria-controls="LinkedTeamsCollapse">Linked teams</h4>
+          </header>
+          <section id="LinkedTeamsCollapse" className="panel-collapse collapse in"
+            role="tabpanel" aria-labelledby="LinkedTeamsHeading">
+            <ul className="list-group list-group-flush">
+              {teamProfiles}
+            </ul>
+          </section>
         </section>
       );
     }
 
     return (
-      <section>
+      <div id="Profile">
         <table>
           <tbody>
           <tr>
@@ -63,9 +75,10 @@ class Profile extends Component {
           </tbody>
         </table>
 
-        {listOfTeamProfiles}
-
-      </section>
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+          {listOfTeamProfiles}
+        </div>
+      </div>
     );
   }
 }
