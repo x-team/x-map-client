@@ -44,10 +44,6 @@
   margin-bottom: 10px;
 }
 
-.page .accordion#listOfTeamProfilesAccordion .panel-collapse {
-  border-top: 1px solid #333;
-}
-
 .page .accordion .input-group-addon {
   margin-bottom: 0;
   line-height: 1.55rem;

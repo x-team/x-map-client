@@ -15,7 +15,7 @@ class Profile extends Component {
     }
 
     let profileInformation = (
-      <div className="">
+      <div>
         <label className="input-group">
           <h5 className="input-group-addon">Email</h5>
           <div className="form-control">{user.email}</div>
@@ -54,10 +54,10 @@ class Profile extends Component {
 
     return (
       <div id="Profile" className="list-group">
-        <div id="profileInformationAccordion" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
-          <section id="ProfileInformation" className="panel panel-default">
+        <div id="ProfileInformation" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
+          <section className="panel panel-default">
             <header href="#" className="panel-heading list-group-item-heading" role="tab" id="ProfileHeading">
-              <h4 className="panel-title" data-toggle="collapse" data-parent="#profileInformationAccordion" href="#ProfileCollapse"
+              <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileInformationAccordion" href="#ProfileCollapse"
                 aria-expanded="true" aria-controls="ProfileCollapse">Informations...</h4>
             </header>
 
@@ -68,10 +68,10 @@ class Profile extends Component {
           </section>
         </div>
 
-        <div id="listOfTeamProfilesAccordion" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
-          <section id="LinkedTeams" className="panel panel-default">
+        <div id="ListOfTeamProfilesAccordion" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
+          <section className="panel panel-default">
             <header className="panel-heading" role="tab" id="LinkedTeamsHeading">
-              <h4 className="panel-title" data-toggle="collapse" data-parent="#listOfTeamProfilesAccordion" href="#LinkedTeamsCollapse"
+              <h4 className="panel-title" data-toggle="collapse" data-parent="#ListOfTeamProfilesAccordion" href="#LinkedTeamsCollapse"
                 aria-expanded="true" aria-controls="LinkedTeamsCollapse">Linked teams...</h4>
             </header>
 
