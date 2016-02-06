@@ -22,6 +22,7 @@ class Team extends Component {
             <h4 className="panel-title" data-toggle="collapse" data-parent="#accordion" href="#LinkedUsersCollapse"
               aria-expanded="true" aria-controls="LinkedUsersCollapse">Linked Users</h4>
           </header>
+
           <section id="LinkedUsersCollapse" className="panel-collapse collapse in"
             role="tabpanel" aria-labelledby="LinkedUsersHeading">
             <ul className="list-group list-group-flush">

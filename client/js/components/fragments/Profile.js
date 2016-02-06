@@ -14,69 +14,72 @@ class Profile extends Component {
       );
     }
 
+    let profileInformation = (
+      <div className="">
+        <label className="input-group">
+          <h5 className="input-group-addon">Email</h5>
+          <div className="form-control">{user.email}</div>
+        </label>
+        <label className="input-group">
+          <h5 className="input-group-addon">Skype ID</h5>
+          <div className="form-control">{user.skypeId}</div>
+        </label>
+        <label className="input-group">
+          <h5 className="input-group-addon">Slack ID</h5>
+          <div className="form-control">{user.slackId}</div>
+        </label>
+        <label className="input-group">
+          <h5 className="input-group-addon">Website</h5>
+          <div className="form-control">{user.website}</div>
+        </label>
+        <label className="input-group">
+          <h5 className="input-group-addon">Nationality</h5>
+          <div className="form-control">{user.nationality}</div>
+        </label>
+        <label className="input-group">
+          <h5 className="input-group-addon">About me</h5>
+          <div className="form-control">{user.aboutMe}</div>
+        </label>
+      </div>
+    );
+
     let listOfTeamProfiles;
     if (teamProfiles.length) {
       listOfTeamProfiles = (
-        <section id="LinkedTeams" className="panel panel-default">
-          <header className="panel-heading" role="tab" id="LinkedTeamsHeading">
-            <h4 className="panel-title" data-toggle="collapse" data-parent="#accordion" href="#LinkedTeamsCollapse"
-              aria-expanded="true" aria-controls="LinkedTeamsCollapse">Linked teams</h4>
-          </header>
-          <section id="LinkedTeamsCollapse" className="panel-collapse collapse in"
-            role="tabpanel" aria-labelledby="LinkedTeamsHeading">
-            <ul className="list-group list-group-flush">
-              {teamProfiles}
-            </ul>
-          </section>
-        </section>
+        <ul className="list-group list-group-flush">
+          {teamProfiles}
+        </ul>
       );
     }
 
     return (
-      <div id="Profile">
-        <table>
-          <tbody>
-          <tr>
-            <th>Email</th>
-            <td>{user.email}</td>
-          </tr>
-          <tr>
-            <th>First name</th>
-            <td>{user.firstName}</td>
-          </tr>
-          <tr>
-            <th>Last name</th>
-            <td>{user.lastName}</td>
-          </tr>
-          <tr>
-            <th>Skype ID</th>
-            <td>{user.skypeId}</td>
-          </tr>
-          <tr>
-            <th>Slack ID</th>
-            <td>{user.slackId}</td>
-          </tr>
-          <tr>
-            <th>Website</th>
-            <td>{user.website}</td>
-          </tr>
-          <tr>
-            <th>Nationality</th>
-            <td>{user.nationality}</td>
-          </tr>
-          <tr>
-            <th>About me</th>
-            <td>{user.aboutMe}</td>
-          </tr>
-          <tr>
-            <th>Is admin</th>
-            <td>{user.isAdmin ? 'Y' : 'N'}</td>
-          </tr>
-          </tbody>
-        </table>
+      <div id="Profile" className="list-group">
+        <div id="profileInformationAccordion" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
+          <section id="ProfileInformation" className="panel panel-default">
+            <header href="#" className="panel-heading list-group-item-heading" role="tab" id="ProfileHeading">
+              <h4 className="panel-title" data-toggle="collapse" data-parent="#profileInformationAccordion" href="#ProfileCollapse"
+                aria-expanded="true" aria-controls="ProfileCollapse">Informations...</h4>
+            </header>
 
-        <div id="accordion" role="tablist" aria-multiselectable="true">
-          {listOfTeamProfiles}
+            <section id="ProfileCollapse" className="panel-collapse collapse in list-group-item-text"
+              role="tabpanel" aria-labelledby="LinkedTeamsHeading">
+              {profileInformation}
+            </section>
+          </section>
+        </div>
+
+        <div id="listOfTeamProfilesAccordion" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
+          <section id="LinkedTeams" className="panel panel-default">
+            <header className="panel-heading" role="tab" id="LinkedTeamsHeading">
+              <h4 className="panel-title" data-toggle="collapse" data-parent="#listOfTeamProfilesAccordion" href="#LinkedTeamsCollapse"
+                aria-expanded="true" aria-controls="LinkedTeamsCollapse">Linked teams...</h4>
+            </header>
+
+            <section id="LinkedTeamsCollapse" className="panel-collapse collapse"
+              role="tabpanel" aria-labelledby="LinkedTeamsHeading">
+              {listOfTeamProfiles}
+            </section>
+          </section>
         </div>
       </div>
     );

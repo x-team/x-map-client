@@ -10,6 +10,8 @@
   overflow-y: auto;
 }
 
+
+/* media */
 .page .media {
   margin-bottom: 0;
 }
@@ -26,26 +28,36 @@
   margin-bottom: 0;
 }
 
-.page #accordion {
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
 
-.page #accordion .panel {
-  border-top: 1px solid #ccc;
-  padding-top: 1rem;
-  margin-top: 1rem;
-}
-
-.page #accordion .panel-title {
+/* accordion */
+.page .accordion .panel-title {
   cursor: pointer;
+  margin-bottom: 0;
 }
 
-.page #accordion .panel-title:hover {
+.page .accordion .panel-title:hover {
   text-decoration: underline;
 }
 
-.page #accordion .list-group-item {
+.page .accordion .panel-collapse {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.page .accordion#listOfTeamProfilesAccordion .panel-collapse {
+  border-top: 1px solid #333;
+}
+
+.page .accordion .input-group-addon {
+  margin-bottom: 0;
+  line-height: 1.55rem;
+}
+
+.page .accordion .form-control {
+  overflow-x: auto;
+}
+
+.page .accordion .list-group-item {
   padding-right: 0;
   padding-left: 0;
 }
