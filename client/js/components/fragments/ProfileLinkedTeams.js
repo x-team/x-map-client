@@ -26,13 +26,14 @@ class ProfileLinkedTeams extends Component {
     return (
       <div id="ProfileLinkedTeams" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
         <section className="panel panel-default">
-          <header className="panel-heading" role="tab" id="LinkedTeamsHeading">
-            <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileLinkedTeams" href="#ProfileLinkedTeamsCollapse"
-              aria-expanded="true" aria-controls="ProfileLinkedTeamsCollapse">Linked teams...</h4>
+          <header className="panel-heading" role="tab" id="ProfileLinkedTeamsHeading">
+            <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileLinkedTeams"
+              aria-expanded="true" aria-controls="ProfileLinkedTeamsCollapse"
+              href="#ProfileLinkedTeamsCollapse">Linked teams...</h4>
           </header>
 
           <section id="ProfileLinkedTeamsCollapse" className="panel-collapse collapse"
-            role="tabpanel" aria-labelledby="LinkedTeamsHeading">
+            role="tabpanel" aria-labelledby="ProfileLinkedTeamsHeading">
             {profileLinkedTeams}
           </section>
         </section>

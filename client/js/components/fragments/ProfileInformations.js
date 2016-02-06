@@ -7,13 +7,14 @@ class ProfileInformations extends Component {
     return (
       <div id="ProfileInformations" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
         <section className="panel panel-default">
-          <header href="#" className="panel-heading list-group-item-heading" role="tab" id="ProfileHeading">
-            <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileInformations" href="#ProfileInformationsCollapse"
-              aria-expanded="true" aria-controls="ProfileInformationsCollapse">Informations...</h4>
+          <header href="#" className="panel-heading list-group-item-heading" role="tab" id="ProfileInformationsHeading">
+            <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileInformations"
+              aria-expanded="true" aria-controls="ProfileInformationsCollapse"
+              href="#ProfileInformationsCollapse">Informations...</h4>
           </header>
 
           <section id="ProfileInformationsCollapse" className="panel-collapse collapse in list-group-item-text"
-            role="tabpanel" aria-labelledby="LinkedTeamsHeading">
+            role="tabpanel" aria-labelledby="ProfileInformationsHeading">
             <div>
               <label className="input-group">
                 <h5 className="input-group-addon">First name</h5>
