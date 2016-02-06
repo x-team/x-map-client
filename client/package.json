@@ -35,7 +35,6 @@
     "bootstrap": "twbs/bootstrap#v4.0.0-alpha.2",
     "bootstrap-loader": "^1.0.7",
     "bootstrap-sass": "^3.3.6",
-    "bulma": "0.0.10",
     "cross-env": "1.0.6",
     "css-loader": "^0.23.0",
     "cssnano": "^3.0.1",

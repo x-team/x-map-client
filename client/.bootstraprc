@@ -89,10 +89,10 @@ styles:
   close: true
 
   # Components w/ JavaScript
-  modal: true
+  modal: false
   tooltip: false
-  popover: true
-  carousel: true
+  popover: false
+  carousel: false
 
   # Utility classes
   utilities: true
@@ -102,14 +102,14 @@ styles:
 
 ### Bootstrap scripts
 scripts:
-  alert: true
-  button: true
-  carousel: true
-  collapse: true
+  alert: false
+  button: false
+  carousel: false
+  collapse: false
   dropdown: true
-  modal: true
-  popover: true
-  scrollspy: true
-  tab: true
+  modal: false
+  popover: false
+  scrollspy: false
+  tab: false
   tooltip: false
-  util: true
+  util: false

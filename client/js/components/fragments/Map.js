@@ -10,6 +10,8 @@ import * as UserActions from '../../actions/UserActions';
 import GoogleMapsLoader from 'google-maps';
 import deepEqual from 'deep-equal';
 
+import '../../../css/components/fragments/_map.css';
+
 import blueMarker from '../../../img/blueMarker.png';
 import 'file?name=[name].[ext]!../../../img/blueMarker.png';
 

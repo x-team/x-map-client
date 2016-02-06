@@ -20,7 +20,8 @@ class ProfilesPage extends Component {
     const profiles = [];
     for (const id in users) {
       profiles.push(
-        <li key={id} onMouseOver={this.markUserAsActive.bind(this, id)} onMouseOut={this.markUserAsInactive.bind(this)}>
+        <li className="list-group-item" key={id}
+          onMouseOver={this.markUserAsActive.bind(this, id)} onMouseOut={this.markUserAsInactive.bind(this)}>
           <MiniProfile user={users[id]}/>
         </li>
       );
@@ -32,19 +33,15 @@ class ProfilesPage extends Component {
 
     return (
       <DocumentTitle title="Profiles | X-Map">
-        <div className="panel">
-          <article id="userProfiles">
-            <header>
-              <h2>Profiles</h2>
-            </header>
-
-            <section>
-              <ul className="horizontal-list">
-                {profiles}
-              </ul>
-            </section>
-          </article>
-        </div>
+        <article id="userProfiles" className="panel card">
+          <header className="card-block">
+            <h4 className="card-title">Profiles</h4>
+            <p className="card-subtitle text-muted">Listing all profiles</p>
+          </header>
+          <ul className="list-group list-group-flush">
+            {profiles}
+          </ul>
+        </article>
       </DocumentTitle>
     );
   }

@@ -24,10 +24,10 @@ class TeamsPage extends Component {
     const teamProfiles = [];
     for (const id in teams) {
       teamProfiles.push(
-        <div key={id} onMouseOver={this.markTeamAsActive.bind(this, id)}
+        <li className="list-group-item" key={id} onMouseOver={this.markTeamAsActive.bind(this, id)}
              onMouseOut={this.markTeamAsInactive.bind(this)}>
           <MiniTeam team={teams[id]}/>
-        </div>
+        </li>
       );
     }
 
@@ -38,26 +38,24 @@ class TeamsPage extends Component {
     let adminMenu = null;
     if (isAdmin) {
       adminMenu = (
-        <section className="navigation">
-          <Link to="/team/new" className="button">Add team</Link>
-        </section>
+        <nav>
+          <Link className="card-link" to="/team/new">Add team</Link>
+        </nav>
       );
     }
 
     return (
       <DocumentTitle title="Teams | X-Map">
-        <div className="panel">
-          <article id="teamProfiles">
-            <header>
-              <h2>Teams</h2>
-              {adminMenu}
-            </header>
-
-            <section>
-              {teamProfiles}
-            </section>
-          </article>
-        </div>
+        <article id="teamProfiles" className="panel card">
+          <header className="card-block">
+            <h4 className="card-title">Teams</h4>
+            <p className="card-subtitle text-muted">Listing all teams</p>
+            {adminMenu}
+          </header>
+          <ul className="list-group list-group-flush">
+            {teamProfiles}
+          </ul>
+        </article>
       </DocumentTitle>
     );
   }

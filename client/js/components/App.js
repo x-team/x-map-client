@@ -45,10 +45,10 @@ class App extends Component {
     let content;
     if (currentUserId && usersLoaded && teamsLoaded) {
       content = (
-        <span>
+        <div>
           <Header user={users[currentUserId]} onLogout={actions.logout.bind(null, this.redirectToHomePage.bind(this))}/>
           { this.props.children }
-        </span>
+        </div>
       );
     } else {
       content = (
