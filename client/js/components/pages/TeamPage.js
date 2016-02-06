@@ -43,24 +43,24 @@ class TeamPage extends Component {
     let editLink;
     let deleteButton;
     if (isAdmin) {
-      editLink = <Link className="card-link" to={`/team/${team.id}/edit`}>Edit team</Link>;
-      deleteButton = <a className="card-link" type="button" className="button"
-        onClick={this.deleteTeam.bind(this, team.id)}>Delete</a>;
+      editLink = <Link className="btn btn-secondary btn-sm" to={`/team/${team.id}/edit`}>Edit team</Link>;
+      deleteButton = <button className="btn btn-secondary btn-sm" type="button"
+        onClick={this.deleteTeam.bind(this, team.id)}>Delete</button>;
     }
 
     return (
       <DocumentTitle title={`Team: ${team.name} | X-Map`}>
         <article id="TeamPage" className="panel card">
-          <header className="card-block">
+          <header className="card-header">
             <h4 className="card-title">{team.name}</h4>
             <p className="card-subtitle">Team profile</p>
             <p className="text-muted">#{team.id}</p>
-            <nav>
-              {editLink} {deleteButton}
-            </nav>
+            <div className="btn-group" role="group" aria-label="Actions menu">
+              {editLink}{deleteButton}
+            </div>
           </header>
 
-          <section>
+          <section className="card-block">
             <Team team={team}/>
           </section>
         </article>

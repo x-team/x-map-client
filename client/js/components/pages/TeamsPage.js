@@ -38,18 +38,18 @@ class TeamsPage extends Component {
     let adminMenu = null;
     if (isAdmin) {
       adminMenu = (
-        <nav>
-          <Link className="card-link" to="/team/new">Add team</Link>
-        </nav>
+        <div className="btn-group" role="group" aria-label="Actions menu">
+          <Link className="btn btn-secondary btn-sm" to="/team/new">Add team</Link>
+        </div>
       );
     }
 
     return (
       <DocumentTitle title="Teams | X-Map">
         <article id="TeamsPage" className="panel card">
-          <header className="card-block">
+          <header className="card-header">
             <h4 className="card-title">Teams</h4>
-            <p className="card-subtitle text-muted">Listing all teams</p>
+            <p className="text-muted">Listing all teams</p>
             {adminMenu}
           </header>
 

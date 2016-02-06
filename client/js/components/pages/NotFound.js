@@ -10,9 +10,7 @@ class NotFound extends Component {
           <header className="card-block">
             <h4 className="card-title">Page not found.</h4>
             <p className="card-subtitle">Feeling lost?</p>
-            <nav>
-              <Link className="card-link" to="/">Go Home</Link>
-            </nav>
+            <Link className="card-link" to="/">Go Home</Link>
           </header>
         </article>
       </DocumentTitle>

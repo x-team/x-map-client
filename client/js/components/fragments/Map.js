@@ -35,7 +35,7 @@ class Map extends Component {
       center: {lat: 0, lng: 50},
       zoom: 2,
       minZoom: 2,
-      mapTypeId: google.maps.MapTypeId.SATELLITE,
+      mapTypeId: google.maps.MapTypeId.HYBRID,
       mapTypeIds: [
         google.maps.MapTypeId.HYBRID,
         google.maps.MapTypeId.ROADMAP,
@@ -45,16 +45,15 @@ class Map extends Component {
       scaleControl: true,
       mapTypeControl: true,
       mapTypeControlOptions: {
-        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-        position: google.maps.ControlPosition.LEFT_BOTTOM
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
       },
       streetViewControl: true,
       streetViewControlOptions: {
-        position: google.maps.ControlPosition.LEFT_BOTTOM
+        position: google.maps.ControlPosition.LEFT_CENTER
       },
       zoomControl: true,
       zoomControlOptions: {
-        position: google.maps.ControlPosition.LEFT_BOTTOM
+        position: google.maps.ControlPosition.LEFT_CENTER
       }
     });
 

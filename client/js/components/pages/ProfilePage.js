@@ -31,30 +31,30 @@ class ProfilePage extends Component {
     let editLink;
     let setLocationLink;
     if (isAdmin || user.id === currentUserId) {
-      editLink = <Link className="card-link" to={`/profile/${user.id}/edit`}>Edit profile</Link>;
-      setLocationLink = <Link className="card-link" to={`/profile/${user.id}/location`}>Set location</Link>;
+      editLink = <Link className="btn btn-secondary btn-sm" to={`/profile/${user.id}/edit`}>Edit profile</Link>;
+      setLocationLink = <Link className="btn btn-secondary btn-sm" to={`/profile/${user.id}/location`}>Set location</Link>;
     }
 
-    let adminLink = <span/>;
+    let adminLink = null;
     if (isAdmin && user.id !== currentUserId) {
       const grantRevokeText = user.isAdmin ? 'Revoke admin' : 'Grant admin';
       const grantRevokeAction = user.isAdmin ? actions.userRevokeAdmin.bind(null, user.id) : actions.userGrantAdmin.bind(null, user.id);
-      adminLink = <a className="card-link" onClick={grantRevokeAction}>{grantRevokeText}</a>;
+      adminLink = <a className="btn btn-secondary btn-sm" onClick={grantRevokeAction}>{grantRevokeText}</a>;
     }
 
     return (
       <DocumentTitle title={`Profile: ${user.firstName} ${user.lastName} | X-Map`}>
         <article id="ProfilePage" className="panel card">
-          <header className="card-block">
+          <header className="card-header">
             <h4 className="card-title">{user.firstName} {user.lastName}</h4>
             <p className="card-subtitle">Profile page</p>
             <p className="text-muted">#{user.id}</p>
-            <nav>
-              {editLink} {setLocationLink} {adminLink}
-            </nav>
+            <div className="btn-group" role="group" aria-label="Actions menu">
+              {editLink}{setLocationLink}{adminLink}
+            </div>
           </header>
 
-          <section>
+          <section className="card-block">
             <Profile user={user}/>
           </section>
         </article>

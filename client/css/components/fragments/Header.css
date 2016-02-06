@@ -2,6 +2,11 @@
   z-index: 9;
 }
 
+#header #logo {
+  line-height: 30px;
+}
+
 #header #logo img {
   height: 30px;
+  display: inline-block;
 }

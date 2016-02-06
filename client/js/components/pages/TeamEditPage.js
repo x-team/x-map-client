@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import * as TeamActions from '../../actions/TeamActions';
 import * as UserActions from '../../actions/UserActions';
 import TeamForm from '../forms/TeamForm';
@@ -38,13 +39,13 @@ class TeamEditPage extends Component {
     return (
       <DocumentTitle title={`Edit team: ${team.name} | X-Map`}>
         <article id="TeamEditPage" className="panel card">
-          <header className="card-block">
+          <header className="card-header">
             <h4 className="card-title">{team.name}</h4>
             <p className="card-subtitle">Edit team</p>
-            <p className="text-muted">#{team.id}</p>
+            <Link className="text-muted" to={`/team/${team.id}`} title={`Go to ${team.name} team page`}>#{team.id}</Link>
           </header>
 
-          <section>
+          <section className="card-block">
             <TeamForm team={team} onSubmit={actions.teamUpdate}
               onSuccess={this.redirectToTeamPage.bind(this, params.id)} errors={errors}/>
           </section>

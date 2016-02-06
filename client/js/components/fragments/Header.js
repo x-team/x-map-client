@@ -15,13 +15,8 @@ class Header extends Component {
 
           <nav className="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
             <Link id="logo" className="navbar-brand" to="/">
-              <img className="logo" src={Logo} alt="X-Map"/>
+              <img className="logo" src={Logo} alt="X-Map"/>X-Map
             </Link>
-
-            <form className="form-inline pull-xs-left">
-              <input className="form-control" type="text" placeholder="Search"/>
-              <button className="btn btn-success-outline" type="submit">Search</button>
-            </form>
 
             <ul className="nav navbar-nav pull-xs-right">
               <li className="nav-item active">

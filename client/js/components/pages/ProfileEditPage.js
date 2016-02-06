@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import * as UserActions from '../../actions/UserActions';
 import ProfileForm from '../forms/ProfileForm';
 import DocumentTitle from 'react-document-title';
@@ -35,13 +36,13 @@ class ProfileEditPage extends Component {
     return (
       <DocumentTitle title={`Edit profile: ${user.firstName} ${user.lastName} | X-Map`}>
         <article id="TeamEditPage" className="panel card">
-          <header className="card-block">
+          <header className="card-header">
             <h4 className="card-title">{user.firstName} {user.lastName}</h4>
             <p className="card-subtitle">Edit profile</p>
-            <p className="text-muted">#{user.id}</p>
+            <Link className="text-muted" to={`/profile/${user.id}`} title={`Go to ${user.firstName} ${user.lastName} profile page`}>#{user.id}</Link>
           </header>
 
-          <section>
+          <section className="card-block">
             <ProfileForm user={user} onSubmit={actions.userUpdate}
              onSuccess={this.redirectToProfilePage.bind(this, params.id)} errors={errors}/>
           </section>
