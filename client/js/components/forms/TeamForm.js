@@ -24,7 +24,6 @@ class TeamForm extends Component {
       <div id="TeamForm">
         <ErrorList errors={errors} showFieldErrors/>
         <form onSubmit={this.onSubmit.bind(this)}>
-
           <fieldset className="form-group">
             <label>Team name*</label>
             <input type="text" className="form-control" placeholder="Name" value={this.state.name}
@@ -47,7 +46,9 @@ class TeamForm extends Component {
           </fieldset>
 
           <fieldset className="form-group">
-            <button className="btn btn-primary" type="submit">Save</button> <Link className="btn btn-secondary" to={`/team/${this.state.id}`} title={this.state.name}>Cancel</Link>
+            <button className="btn btn-primary" type="submit">Save</button>
+            <span> </span>
+            <Link className="btn btn-secondary" to={`/team/${this.state.id}`} title={this.state.name}>Cancel</Link>
           </fieldset>
         </form>
       </div>

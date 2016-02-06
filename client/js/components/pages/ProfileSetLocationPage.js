@@ -51,8 +51,9 @@ class ProfileSetLocationPage extends Component {
 
           <section className="card-block">
             <p className="card-text">Click in the map to select current location then click save.</p>
-            <button className="card-link" type="button" disabled={!currentLocation} onClick={this.save.bind(this)}>Save</button>
-            <Link className="card-link" to={`/profile/${params.id}`} title={`Go to ${user.firstName} ${user.lastName} profile page`}>Cancel</Link>
+            <button className="btn btn-primary" type="button" disabled={!currentLocation} onClick={this.save.bind(this)}>Save</button>
+            <span> </span>
+            <Link className="btn btn-secondary" to={`/profile/${params.id}`} title={`Go to ${user.firstName} ${user.lastName} profile page`}>Cancel</Link>
           </section>
         </article>
       </DocumentTitle>
