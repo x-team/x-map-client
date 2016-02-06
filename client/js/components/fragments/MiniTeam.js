@@ -7,7 +7,7 @@ class MiniTeam extends Component {
 
     let summary = null;
     if (team.summary) {
-      summary = <p>{team.summary}</p>;
+      summary = <p className="text-muted">{team.summary}</p>;
     }
 
     return (

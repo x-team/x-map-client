@@ -8,20 +8,31 @@ class MiniProfile extends Component {
     let avatar = null;
     if (user.avatar) {
       avatar = (
-        <span className="media-left">
-          <img className="media-object img-circle" src={user.avatar} alt={`${user.firstName} ${user.lastName}`}/>
-        </span>
+        <img className="media-object img-circle" src={user.avatar} alt={`${user.firstName} ${user.lastName}`}/>
+      );
+    }
+
+    let name = (
+      <a className="text-muted" href={`mailto:${user.email}`} target="_blank">{user.email}</a>
+    );
+    if (user.slackId) {
+      name = (
+        <a className="text-muted" href={`slack:${user.slackId}`} target="_blank">Slack: @{user.slackId}</a>
       );
     }
 
     return (
-      <Link className="miniProfile media" to={`/profile/${user.id}`} title={`${user.firstName} ${user.lastName}`}>
-        {avatar}
+      <div className="miniProfile media">
+        <Link className="media-left" to={`/profile/${user.id}`} title={`${user.firstName} ${user.lastName}`}>
+          {avatar}
+        </Link>
         <span className="media-body">
-          <h4 className="media-heading">{user.firstName} {user.lastName}</h4>
-          <p>{user.email}</p>
+          <Link to={`/profile/${user.id}`} title={`${user.firstName} ${user.lastName}`}>
+            <h4 className="media-heading">{user.firstName} {user.lastName}</h4>
+          </Link>
+          {name}
         </span>
-      </Link>
+      </div>
     );
   }
 }
