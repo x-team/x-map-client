@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class ProfileInformations extends Component {
   render() {
@@ -55,5 +55,11 @@ class ProfileInformations extends Component {
     );
   }
 }
+
+ProfileInformations.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default ProfileInformations;

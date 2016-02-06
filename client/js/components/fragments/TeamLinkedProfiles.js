@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import MiniProfile from './MiniProfile';
 
 class TeamLinkedProfiles extends Component {
@@ -41,5 +41,11 @@ class TeamLinkedProfiles extends Component {
     );
   }
 }
+
+TeamLinkedProfiles.propTypes = {
+  team: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default TeamLinkedProfiles;

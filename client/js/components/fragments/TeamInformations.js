@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class TeamInformations extends Component {
   render() {
@@ -35,5 +35,11 @@ class TeamInformations extends Component {
     );
   }
 }
+
+TeamInformations.propTypes = {
+  team: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default TeamInformations;

@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import MiniProfile from './MiniProfile';
 import TeamInformations from './TeamInformations';
 import TeamLinkedProfiles from './TeamLinkedProfiles';
 

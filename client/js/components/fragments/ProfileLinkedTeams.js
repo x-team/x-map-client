@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import MiniTeam from './MiniTeam';
 
 class ProfileLinkedTeams extends Component {
   render() {
     const { user } = this.props;
 
-    let teamProfiles = [];
-    for (let id in user.teams) {
+    const teamProfiles = [];
+    for (const id in user.teams) {
       teamProfiles.push(
         <li className="list-group-item" key={id}>
           <MiniTeam team={user.teams[id]}/>
@@ -41,5 +41,11 @@ class ProfileLinkedTeams extends Component {
     );
   }
 }
+
+ProfileLinkedTeams.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default ProfileLinkedTeams;

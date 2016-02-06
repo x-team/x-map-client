@@ -43,9 +43,14 @@ class TeamPage extends Component {
     let editLink;
     let deleteButton;
     if (isAdmin) {
-      editLink = <Link className="btn btn-secondary btn-sm" to={`/team/${team.id}/edit`}>Edit team</Link>;
-      deleteButton = <button className="btn btn-secondary btn-sm" type="button"
-        onClick={this.deleteTeam.bind(this, team.id)}>Delete</button>;
+      editLink = (
+        <Link className="btn btn-secondary btn-sm" to={`/team/${team.id}/edit`}>Edit team</Link>
+      );
+
+      deleteButton = (
+        <button className="btn btn-secondary btn-sm" type="button"
+          onClick={this.deleteTeam.bind(this, team.id)}>Delete</button>
+      );
     }
 
     return (
