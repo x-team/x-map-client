@@ -46,12 +46,13 @@ class TeamsPage extends Component {
 
     return (
       <DocumentTitle title="Teams | X-Map">
-        <article id="teamProfiles" className="panel card">
+        <article id="TeamsPage" className="panel card">
           <header className="card-block">
             <h4 className="card-title">Teams</h4>
             <p className="card-subtitle text-muted">Listing all teams</p>
             {adminMenu}
           </header>
+
           <ul className="list-group list-group-flush">
             {teamProfiles}
           </ul>

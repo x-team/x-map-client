@@ -42,13 +42,20 @@ class ProfileSetLocationPage extends Component {
 
     return (
       <DocumentTitle title={`Set location: ${user.firstName} ${user.lastName} | X-Map`}>
-        <div className="panel">
-          <article>
-            <h3>Select location on the map</h3>
-            <button type="button" disabled={!currentLocation} onClick={this.save.bind(this)}>Save</button>
-            <Link to={`/profile/${params.id}`}>Cancel</Link>
-          </article>
-        </div>
+        <article id="ProfileSetLocationPage" className="panel card">
+          <header className="card-block">
+            <h4 className="card-title">{user.firstName} {user.lastName}</h4>
+            <p className="card-subtitle">Click in the map to select current location.</p>
+            <p className="text-muted">#{user.id}</p>
+          </header>
+
+          <section>
+            <nav>
+              <button className="card-link" type="button" disabled={!currentLocation} onClick={this.save.bind(this)}>Save</button>
+              <Link className="card-link" to={`/profile/${params.id}`}>Cancel</Link>
+            </nav>
+          </section>
+        </article>
       </DocumentTitle>
     );
   }

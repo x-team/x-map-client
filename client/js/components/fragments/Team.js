@@ -7,7 +7,11 @@ class Team extends Component {
 
     const userProfiles = [];
     for (const id in team.users) {
-      userProfiles.push(<MiniProfile key={id} user={team.users[id]}/>);
+      userProfiles.push(
+        <li className="list-group-item" key={id}>
+          <MiniProfile user={team.users[id]}/>
+        </li>
+      );
     }
 
     let listOfUserProfiles;
@@ -15,7 +19,9 @@ class Team extends Component {
       listOfUserProfiles = (
         <section>
           <h3>Linked users:</h3>
-          {userProfiles}
+          <ul className="list-group list-group-flush">
+            {userProfiles}
+          </ul>
         </section>
       );
     }

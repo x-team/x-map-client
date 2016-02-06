@@ -31,33 +31,33 @@ class ProfilePage extends Component {
     let editLink;
     let setLocationLink;
     if (isAdmin || user.id === currentUserId) {
-      editLink = <Link to={`/profile/${user.id}/edit`}>Edit profile</Link>;
-      setLocationLink = <Link to={`/profile/${user.id}/location`}>Set location</Link>;
+      editLink = <Link className="card-link" to={`/profile/${user.id}/edit`}>Edit profile</Link>;
+      setLocationLink = <Link className="card-link" to={`/profile/${user.id}/location`}>Set location</Link>;
     }
 
     let adminLink = <span/>;
     if (isAdmin && user.id !== currentUserId) {
       const grantRevokeText = user.isAdmin ? 'Revoke admin' : 'Grant admin';
       const grantRevokeAction = user.isAdmin ? actions.userRevokeAdmin.bind(null, user.id) : actions.userGrantAdmin.bind(null, user.id);
-      adminLink = <button type="button" className="button" onClick={grantRevokeAction}>{grantRevokeText}</button>;
+      adminLink = <a className="card-link" onClick={grantRevokeAction}>{grantRevokeText}</a>;
     }
 
     return (
       <DocumentTitle title={`Profile: ${user.firstName} ${user.lastName} | X-Map`}>
-        <div className="panel">
-          <article id="userProfile">
-            <header>
-              <h2>User #{user.id}</h2>
-            </header>
+        <article id="ProfilePage" className="panel card">
+          <header className="card-block">
+            <h4 className="card-title">{user.firstName} {user.lastName}</h4>
+            <p className="card-subtitle">Profile page</p>
+            <p className="text-muted">#{user.id}</p>
+            <nav>
+              {editLink} {setLocationLink} {adminLink}
+            </nav>
+          </header>
 
-            <section>
-              <Profile user={user}/>
-              {editLink}
-              {setLocationLink}
-              {adminLink}
-            </section>
-          </article>
-        </div>
+          <section>
+            <Profile user={user}/>
+          </section>
+        </article>
       </DocumentTitle>
     );
   }

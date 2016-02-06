@@ -34,14 +34,18 @@ class ProfileEditPage extends Component {
 
     return (
       <DocumentTitle title={`Edit profile: ${user.firstName} ${user.lastName} | X-Map`}>
-        <div className="panel">
-          <article>
-            <section>
-              <ProfileForm user={user} onSubmit={actions.userUpdate}
-                           onSuccess={this.redirectToProfilePage.bind(this, params.id)} errors={errors}/>
-            </section>
-          </article>
-        </div>
+        <article id="TeamEditPage" className="panel card">
+          <header className="card-block">
+            <h4 className="card-title">{user.firstName} {user.lastName}</h4>
+            <p className="card-subtitle">Edit profile</p>
+            <p className="text-muted">#{user.id}</p>
+          </header>
+
+          <section>
+            <ProfileForm user={user} onSubmit={actions.userUpdate}
+             onSuccess={this.redirectToProfilePage.bind(this, params.id)} errors={errors}/>
+          </section>
+        </article>
       </DocumentTitle>
     );
   }

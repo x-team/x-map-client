@@ -5,15 +5,16 @@ import DocumentTitle from 'react-document-title';
 class NotFound extends Component {
   render() {
     return (
-      <DocumentTitle title="Error | X-Map">
-        <div className="panel">
-          <article className="page-not-found">
-            <section>
-              <h1>Page not found.</h1>
-              <Link to="/" className="btn">Home</Link>
-            </section>
-          </article>
-        </div>
+      <DocumentTitle title="Page Not Found | X-Map">
+        <article id="NotFound" className="panel card">
+          <header className="card-block">
+            <h4 className="card-title">Page not found.</h4>
+            <p className="card-subtitle">Feeling lost?</p>
+            <nav>
+              <Link className="card-link" to="/">Go Home</Link>
+            </nav>
+          </header>
+        </article>
       </DocumentTitle>
     );
   }
