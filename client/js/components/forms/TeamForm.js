@@ -25,24 +25,24 @@ class TeamForm extends Component {
         <ErrorList errors={errors} showFieldErrors/>
         <form onSubmit={this.onSubmit.bind(this)}>
           <fieldset className="form-group">
-            <label>Team name*</label>
+            <label>Team name</label>
             <input type="text" className="form-control" placeholder="Name" value={this.state.name}
-              minLength="2" maxLength="32" onChange={this.onInputChange.bind(this, 'name')} required/>
-            <small className="text-muted">Max length 32 chars.</small>
+              minLength="6" maxLength="32" onChange={this.onInputChange.bind(this, 'name')} required/>
+            <small className="text-muted">Maximum length: 32 characters. <strong>Required information.</strong></small>
           </fieldset>
 
           <fieldset className="form-group">
-            <label>Short summary*</label>
+            <label>Short summary</label>
             <input type="text" className="form-control" placeholder="Summary" value={this.state.summary}
               maxLength="128" onChange={this.onInputChange.bind(this, 'summary')} required/>
-            <small className="text-muted">Max length 128 chars.</small>
+            <small className="text-muted">Maximum length: 32 characters. <strong>Required information.</strong></small>
           </fieldset>
 
           <fieldset className="form-group">
             <label>Long description</label>
             <textarea className="form-control" placeholder="Description" value={this.state.description}
-              maxLength="1024" onChange={this.onInputChange.bind(this, 'description')}/>
-            <small className="text-muted">Max length 1024 chars.</small>
+              maxLength="1024" rows="5" onChange={this.onInputChange.bind(this, 'description')}/>
+            <small className="text-muted">Maximum length: 32 characters.</small>
           </fieldset>
 
           <fieldset className="form-group">

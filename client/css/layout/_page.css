@@ -1,6 +1,7 @@
 /*This file contains all styles related to the panels of the site/application.*/
 .page {
-  width: 400px;
+  min-width: 500px;
+  width: 40%;
   max-height: calc(100% - 110px);
   position: fixed !important;
   top: 70px;
@@ -56,4 +57,11 @@
 .page .accordion .list-group-item {
   padding-right: 0;
   padding-left: 0;
+}
+
+.page .accordion .input-group-addon {
+  width: 30%;
+  text-align: right;
+  white-space: initial;
+  word-wrap: break-word;
 }

@@ -14,9 +14,9 @@ class MiniProfile extends Component {
       );
     }
 
-    let name = (<p className="text-muted">{user.email}</p>);
+    let contact = user.email;
     if (user.slackId) {
-      name = (<p className="text-muted">Slack: @{user.slackId}</p>);
+      contact = 'Slack: @' + user.slackId;
     }
 
     return (
@@ -24,7 +24,7 @@ class MiniProfile extends Component {
           {avatar}
         <span className="media-body">
           <h4 className="media-heading">{user.firstName} {user.lastName}</h4>
-          {name}
+          <p className="text-muted">{contact}</p>
         </span>
       </Link>
     );

@@ -28,7 +28,6 @@ class ProfilePage extends Component {
       return <span/>;
     }
 
-    // Use some better picture in this place
     let poster = null;
     if (user.avatar) {
       poster = (

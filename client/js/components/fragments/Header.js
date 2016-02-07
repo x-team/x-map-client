@@ -16,7 +16,7 @@ class Header extends Component {
           <nav className="navbar navbar-fixed-top navbar-full navbar-light bg-faded">
             <h2 className="sr-only sr-only-focusable">Name of the page need to go here</h2>
 
-            <Link id="logo" className="navbar-brand" to="/">
+            <Link className="logo navbar-brand" to="/">
               <img className="logo" src={Logo} alt="X-Map"/> X-Map
             </Link>
 

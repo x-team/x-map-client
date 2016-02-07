@@ -33,7 +33,7 @@ class Map extends Component {
   configureMap(google) {
     this.map = new google.maps.Map(document.getElementById('Map'), {
       center: {lat: 0, lng: 0},
-      zoom: 3,
+      zoom: 2,
       mapTypeId: google.maps.MapTypeId.HYBRID,
       mapTypeIds: [
         google.maps.MapTypeId.HYBRID,
@@ -70,6 +70,9 @@ class Map extends Component {
     this.map.data.addListener('click', event => {
       if (this.props.mapMode === MAP_MODE_SHOW && this.props.onFeatureClick) {
         this.props.onFeatureClick(event.feature.getId());
+
+        let latLng = new google.maps.LatLng(event.latLng.lat(), event.latLng.lng() + 35);
+        this.map.panTo(latLng);
       }
     });
 

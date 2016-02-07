@@ -18,7 +18,7 @@ class TeamAddPage extends Component {
         <article id="TeamAddPage" className="page card">
           <header className="card-header">
             <h3 className="card-title">Add team</h3>
-            <p className="card-subtitle">Create new team then edit the team to add people.</p>
+            <p className="card-subtitle">Create a new team</p>
           </header>
 
           <div className="card-block">

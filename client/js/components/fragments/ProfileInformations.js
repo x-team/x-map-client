@@ -10,7 +10,7 @@ class ProfileInformations extends Component {
           <header href="#" className="panel-heading list-group-item-heading" role="tab" id="ProfileInformationsHeading">
             <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileInformations"
               aria-expanded="true" aria-controls="ProfileInformationsCollapse"
-              href="#ProfileInformationsCollapse">Informations...</h4>
+              href="#ProfileInformationsCollapse">Information</h4>
           </header>
 
           <section id="ProfileInformationsCollapse" className="panel-collapse collapse in list-group-item-text"
