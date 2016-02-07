@@ -11,6 +11,16 @@ $size: 500px;
   padding-top: 20px;
   padding-bottom: 20px;
   color: white;
+  border: none;
+}
+
+#Loader a {
+  color: white;
+  font-weight: bolder;
+}
+
+#Loader a:hover {
+  text-decoration: underline;
 }
 
 #Loader h2 {

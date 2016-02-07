@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import ProfileInformations from './ProfileInformations';
+import ProfileDetails from './ProfileDetails';
 import ProfileLinkedTeams from './ProfileLinkedTeams';
 
 class Profile extends Component {
@@ -8,7 +8,7 @@ class Profile extends Component {
 
     return (
       <div id="Profile" className="list-group">
-        <ProfileInformations user={user}/>
+        <ProfileDetails user={user}/>
         <ProfileLinkedTeams user={user}/>
       </div>
     );

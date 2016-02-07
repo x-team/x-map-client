@@ -1,20 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 
-class ProfileInformations extends Component {
+class ProfileDetails extends Component {
   render() {
     const { user } = this.props;
 
     return (
-      <div id="ProfileInformations" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
+      <div id="ProfileDetails" className="accordion list-group-item" role="tablist" aria-multiselectable="true">
         <section className="panel panel-default">
-          <header href="#" className="panel-heading list-group-item-heading" role="tab" id="ProfileInformationsHeading">
-            <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileInformations"
-              aria-expanded="true" aria-controls="ProfileInformationsCollapse"
-              href="#ProfileInformationsCollapse">Information</h4>
+          <header href="#" className="panel-heading list-group-item-heading" role="tab" id="ProfileDetailsHeading">
+            <h4 className="panel-title" data-toggle="collapse" data-parent="#ProfileDetails"
+              aria-expanded="true" aria-controls="ProfileDetailsCollapse"
+              href="#ProfileDetailsCollapse">Details</h4>
           </header>
 
-          <section id="ProfileInformationsCollapse" className="panel-collapse collapse in list-group-item-text"
-            role="tabpanel" aria-labelledby="ProfileInformationsHeading">
+          <section id="ProfileDetailsCollapse" className="panel-collapse collapse in list-group-item-text"
+            role="tabpanel" aria-labelledby="ProfileDetailsHeading">
             <div>
               <label className="input-group">
                 <h5 className="input-group-addon">First name</h5>
@@ -56,10 +56,10 @@ class ProfileInformations extends Component {
   }
 }
 
-ProfileInformations.propTypes = {
+ProfileDetails.propTypes = {
   user: PropTypes.shape({
     id: PropTypes.string.isRequired
   }).isRequired
 };
 
-export default ProfileInformations;
+export default ProfileDetails;

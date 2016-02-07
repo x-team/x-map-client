@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import TeamInformations from './TeamInformations';
+import TeamDetails from './TeamDetails';
 import TeamLinkedProfiles from './TeamLinkedProfiles';
 
 class Team extends Component {
@@ -8,7 +8,7 @@ class Team extends Component {
 
     return (
       <div id="Team" className="list-group">
-        <TeamInformations team={team}/>
+        <TeamDetails team={team}/>
         <TeamLinkedProfiles team={team}/>
       </div>
     );
