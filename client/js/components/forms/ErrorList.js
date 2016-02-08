@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+
+/* Components */
 import Error from './Error';
 
 class ErrorList extends Component {

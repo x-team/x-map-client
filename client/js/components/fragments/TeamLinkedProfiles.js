@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+
+/* Components */
 import MiniProfile from './MiniProfile';
 
 class TeamLinkedProfiles extends Component {

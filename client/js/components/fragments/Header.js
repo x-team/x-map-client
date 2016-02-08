@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
+/* Assets */
 import Logo from '../../../img/logo.png';
 import 'file?name=[name].[ext]!../../../img/logo.png';
 

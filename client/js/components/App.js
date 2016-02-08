@@ -1,15 +1,19 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import DocumentTitle from 'react-document-title';
+
 import getGoogleApiClient from 'google-client-api';
+
 import * as AppActions from '../actions/AppActions';
 import * as UserActions from '../actions/UserActions';
 import * as TeamActions from '../actions/TeamActions';
 import assignToEmpty from '../utils/assign';
+
+/* Components */
 import Header from './fragments/Header';
 import Loader from './fragments/Loader';
 import Map from './fragments/Map';
-import DocumentTitle from 'react-document-title';
 
 class App extends Component {
   constructor(props, context) {

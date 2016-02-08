@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+
+/* Components */
 import ProfileDetails from './ProfileDetails';
 import ProfileLinkedTeams from './ProfileLinkedTeams';
 

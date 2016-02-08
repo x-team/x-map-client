@@ -1,10 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as UserActions from '../../actions/UserActions';
 import { Link } from 'react-router';
-import Profile from '../fragments/Profile';
 import DocumentTitle from 'react-document-title';
+
+import * as UserActions from '../../actions/UserActions';
+
+/* Components */
+import Profile from '../fragments/Profile';
 
 class ProfilePage extends Component {
   componentDidMount() {
@@ -55,7 +58,10 @@ class ProfilePage extends Component {
     return (
       <DocumentTitle title={`Profile: ${user.firstName} ${user.lastName} | X-Map`}>
         <article id="ProfilePage" className="page card">
+          <Link to="/" className="close btn btn-secondary">&times;</Link>
+
           {poster}
+
           <header className="card-header">
             <h3 className="card-title">{user.firstName} {user.lastName}</h3>
             <p className="card-subtitle">Profile page</p>

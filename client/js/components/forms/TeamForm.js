@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+
+/* Components */
 import ErrorList from '../forms/ErrorList';
 
 class TeamForm extends Component {
@@ -20,6 +22,9 @@ class TeamForm extends Component {
 
   render() {
     const { errors } = this.props;
+
+    const cancelLink = (this.state.id) ? ('/team/' + this.state.id) : '/teams/';
+
     return (
       <div id="TeamForm">
         <ErrorList errors={errors} showFieldErrors/>
@@ -48,7 +53,7 @@ class TeamForm extends Component {
           <fieldset className="form-group">
             <button className="btn btn-primary" type="submit">Save</button>
             <span> </span>
-            <Link className="btn btn-secondary" to={`/team/${this.state.id}`} title={this.state.name}>Cancel</Link>
+            <Link className="btn btn-secondary" to={cancelLink} title="Cancel editing">Cancel</Link>
           </fieldset>
         </form>
       </div>

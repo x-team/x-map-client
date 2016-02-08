@@ -1,12 +1,15 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import DocumentTitle from 'react-document-title';
+
 import * as TeamActions from '../../actions/TeamActions';
 import * as UserActions from '../../actions/UserActions';
-import { Link } from 'react-router';
-import MiniTeam from '../fragments/MiniTeam';
 import assignToEmpty from '../../utils/assign';
-import DocumentTitle from 'react-document-title';
+
+/* Components */
+import MiniTeam from '../fragments/MiniTeam';
 
 class TeamsPage extends Component {
   markTeamAsActive(id) {
@@ -47,6 +50,8 @@ class TeamsPage extends Component {
     return (
       <DocumentTitle title="Teams | X-Map">
         <article id="TeamsPage" className="page card">
+          <Link to="/" className="close btn btn-secondary">&times;</Link>
+
           <header className="card-header">
             <h3 className="card-title">Teams</h3>
             <p className="text-muted">Listing all teams</p>

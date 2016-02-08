@@ -1,9 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as UserActions from '../../actions/UserActions';
-import MiniProfile from '../fragments/MiniProfile';
+import { Link } from 'react-router';
 import DocumentTitle from 'react-document-title';
+
+import * as UserActions from '../../actions/UserActions';
+
+/* Components */
+import MiniProfile from '../fragments/MiniProfile';
 
 class ProfilesPage extends Component {
   markUserAsActive(id) {
@@ -34,6 +38,8 @@ class ProfilesPage extends Component {
     return (
       <DocumentTitle title="Profiles | X-Map">
         <article id="ProfilesPage" className="page card">
+          <Link to="/" className="close btn btn-secondary">&times;</Link>
+
           <header className="card-header">
             <h3 className="card-title">Profiles</h3>
             <p className="text-muted">Listing all profiles</p>

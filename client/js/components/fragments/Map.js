@@ -6,16 +6,15 @@ import {
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as UserActions from '../../actions/UserActions';
+
 import GoogleMapsLoader from 'google-maps';
 import deepEqual from 'deep-equal';
 
+import * as UserActions from '../../actions/UserActions';
+
+/* Assets */
 import blueMarker from '../../../img/blueMarker.png';
 import 'file?name=[name].[ext]!../../../img/blueMarker.png';
-
-// https://developers.google.com/maps/documentation/javascript/reference
-// https://developers.google.com/maps/documentation/javascript/libraries
-// https://developers.google.com/maps/documentation/javascript/controls
 
 class Map extends Component {
   componentDidMount() {
@@ -71,7 +70,7 @@ class Map extends Component {
       if (this.props.mapMode === MAP_MODE_SHOW && this.props.onFeatureClick) {
         this.props.onFeatureClick(event.feature.getId());
 
-        let latLng = new google.maps.LatLng(event.latLng.lat(), event.latLng.lng() + 35);
+        const latLng = new google.maps.LatLng(event.latLng.lat(), event.latLng.lng() + 35);
         this.map.panTo(latLng);
       }
     });

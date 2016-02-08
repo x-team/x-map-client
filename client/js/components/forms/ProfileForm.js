@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+
+/* Components */
 import ErrorList from '../forms/ErrorList';
 
 class ProfileForm extends Component {

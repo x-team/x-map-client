@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+
+/* Components */
 import MiniTeam from './MiniTeam';
 
 class ProfileLinkedTeams extends Component {

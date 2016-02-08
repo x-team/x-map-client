@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
+
+/* Components */
 import SignInButton from './SignInButton';
 
+/* Assets */
 import Logo from '../../../img/xteam-vertical.png';
 import 'file?name=[name].[ext]!../../../img/xteam-vertical.png';
 
