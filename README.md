@@ -33,12 +33,23 @@ In order to install dependencies and build the application, run:
 docker-compose run web composer build
 ```
 
+> In case of an error while running Docker Compose ([Issue](https://github.com/docker/compose/issues/2180#issuecomment-207789989)):
+> ```
+> ERROR: Couldn't connect to Docker daemon - you might need to run `docker-machine start default`.
+> ```
+> You can either:
+> * Run `eval $(docker-machine env default)`
+>
+> **or**
+>
+> * Put in `.bash_profile` the output from `eval $(docker-machine env default)`
+
 Application is ready to run. Execute the following:
 ```
 docker-compose up -d
 ```
 
-``x-map`` appliction should be available at the [http://x-map.app](http://x-map.app)
+``x-map`` application should be available at the [http://x-map.app](http://x-map.app)
 
 To stop the application run:
 ```
