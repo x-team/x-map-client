@@ -13,6 +13,8 @@ import {
 } from '../constants/AppConstants';
 
 import assignToEmpty from '../utils/assign';
+import { sortTeamsByName } from '../utils/common';
+
 
 // Export initial state to avoid repetition on tests.
 export const initialState = {};
@@ -25,11 +27,13 @@ function usersReducer(users = initialState, action) {
     case USER_LIST_SUCCESS:
       newUsers = {};
       action.users.forEach((user) => {
+        processUser(user);
         newUsers[user.id] = user;
       });
       return newUsers;
     case USER_GET_SUCCESS:
     case USER_UPDATE_SUCCESS:
+      processUser(action.user);
       return assignToEmpty(users, {
         [action.user.id]: action.user
       });
@@ -61,6 +65,10 @@ function usersReducer(users = initialState, action) {
     default:
       return users;
   }
+}
+
+function processUser(user) {
+  user.teams.sort(sortTeamsByName);
 }
 
 export default usersReducer;
