@@ -7,6 +7,7 @@ import DocumentTitle from 'react-document-title';
 import * as TeamActions from '../../actions/TeamActions';
 import * as UserActions from '../../actions/UserActions';
 import assignToEmpty from '../../utils/assign';
+import { sortTeamsByName } from '../../utils/common';
 
 /* Components */
 import MiniTeam from '../fragments/MiniTeam';
@@ -24,14 +25,21 @@ export class TeamsPage extends Component {
   render() {
     const { teams, isAdmin } = this.props;
 
-    let teamProfiles = [];
+    const profileObjects = [];
     for (const id in teams) {
+      profileObjects.push(teams[id]);
+    }
+
+    profileObjects.sort(sortTeamsByName);
+
+    let teamProfiles = [];
+    profileObjects.forEach((team) => {
       teamProfiles.push(
-        <li className="list-group-item" key={id} onMouseOver={this.markTeamAsActive.bind(this, id)} onMouseOut={this.markTeamAsInactive.bind(this)}>
-          <MiniTeam team={teams[id]}/>
+        <li className="list-group-item" key={team.id} onMouseOver={this.markTeamAsActive.bind(this, team.id)} onMouseOut={this.markTeamAsInactive.bind(this)}>
+          <MiniTeam team={team}/>
         </li>
       );
-    }
+    });
 
     if (!teamProfiles.length) {
       teamProfiles = <p className="alert">No teams yet.</p>;

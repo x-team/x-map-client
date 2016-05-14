@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import DocumentTitle from 'react-document-title';
+import { sortUsersByName } from '../../utils/common';
 
 import * as UserActions from '../../actions/UserActions';
 
@@ -21,15 +22,22 @@ export class ProfilesPage extends Component {
   render() {
     const { users } = this.props;
 
-    const profiles = [];
+    const profileObjects = [];
     for (const id in users) {
+      profileObjects.push(users[id]);
+    }
+
+    profileObjects.sort(sortUsersByName);
+
+    const profiles = [];
+    profileObjects.forEach((user) => {
       profiles.push(
-        <li className="list-group-item" key={id}
-          onMouseOver={this.markUserAsActive.bind(this, id)} onMouseOut={this.markUserAsInactive.bind(this)}>
-          <MiniProfile user={users[id]}/>
+        <li className="list-group-item" key={user.id}
+          onMouseOver={this.markUserAsActive.bind(this, user.id)} onMouseOut={this.markUserAsInactive.bind(this)}>
+          <MiniProfile user={user}/>
         </li>
       );
-    }
+    });
 
     if (!profiles.length) {
       profiles.push(<p className="alert error">Something has gone wrong. No profiles found.</p>);
