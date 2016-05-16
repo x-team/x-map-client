@@ -65,7 +65,7 @@ export class App extends Component {
   }
 
   renderMap() {
-    return  <Map onFeatureClick={this.redirectToProfilePage.bind(this)}/>;
+    return <Map onFeatureClick={this.redirectToProfilePage.bind(this)}/>;
   }
 
   render() {
