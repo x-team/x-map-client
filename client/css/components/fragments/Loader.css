@@ -21,6 +21,7 @@ $size: 500px;
     width: 177.77777778vh;
     min-width: 100%;
     min-height: 56.25vw;
+    background: #000;
 }
 
 #Loader a {

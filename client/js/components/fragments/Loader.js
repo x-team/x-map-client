@@ -5,8 +5,6 @@ import SignInButton from './SignInButton';
 
 /* Assets */
 import Logo from '../../../img/xteam-vertical.png';
-import BgVideo from 'file!./../../../videos/login-bg.mp4';
-import 'file?name=[name].[ext]!../../../img/xteam-vertical.png';
 
 class Loader extends Component {
   render() {
@@ -18,7 +16,7 @@ class Loader extends Component {
     return (
       <div className="loader-container">
         <video className="loader-bg" loop autoPlay>
-          <source src={BgVideo} type="video/mp4"/>
+          <source src="../../../videos/bg-video.mp4" type="video/mp4"/>
         </video>
         <article id="Loader" className="page card">
           <div className="card-block">

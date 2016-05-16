@@ -102,6 +102,13 @@ module.exports = function(options) {
         }, {
           test: /\.jpe?g$|\.gif$|\.png$/i,
           loader: "url-loader?limit=100000"
+        }, {
+            test: /\.mp4$/,
+            loader: 'url-loader?limit=10000&mimetype=video/mp4'
+        },
+        {
+          test: /\.html$/,
+          loader: 'html-loader?attrs[]=video:src'
         }
       ]
     },
