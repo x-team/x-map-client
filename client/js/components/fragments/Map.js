@@ -14,7 +14,6 @@ import * as UserActions from '../../actions/UserActions';
 
 /* Assets */
 import blueMarker from '../../../img/blueMarker.png';
-import 'file?name=[name].[ext]!../../../img/blueMarker.png';
 
 export class Map extends Component {
   componentDidMount() {

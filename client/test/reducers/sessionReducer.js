@@ -5,7 +5,7 @@ import * as AppConstants from '../../js/constants/AppConstants';
 const initialState = {
   activeUserIds: [],
   mapMode: AppConstants.MAP_MODE_SHOW,
-  isSignedIn: true,
+  isSignedIn: false,
   currentUserId: null
 };
 

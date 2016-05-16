@@ -1,17 +1,27 @@
 $size: 500px;
+
+
 #Loader {
   width: $size;
   min-height: $size;
-  position: fixed;
   top: calc(50% - ($size / 2));
   left: calc(50% - ($size / 2));
   z-index: 2;
-  background-image: url(../img/shinyworldglobe.png);
-  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.55);
   padding-top: 20px;
   padding-bottom: 20px;
-  color: white;
   border: none;
+  background: none;
+  color: #fff;
+}
+
+.loader-container .loader-bg{
+    color:#000;
+    position: fixed;
+    height: 100%;
+    width: 177.77777778vh;
+    min-width: 100%;
+    min-height: 56.25vw;
+    background: #000;
 }
 
 #Loader a {
@@ -21,6 +31,7 @@ $size: 500px;
 
 #Loader a:hover {
   text-decoration: underline;
+
 }
 
 #Loader h2 {
@@ -29,4 +40,8 @@ $size: 500px;
 
 .gmnoprint.gm-style-mtc {
   top: 60px !important;
+}
+
+#SignInButton a:hover {
+  background: none;
 }

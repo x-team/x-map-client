@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 
 /* Assets */
 import Logo from '../../../img/logo.png';
-import 'file?name=[name].[ext]!../../../img/logo.png';
 
 class Header extends Component {
   render() {

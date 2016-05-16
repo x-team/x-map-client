@@ -64,9 +64,12 @@ export class App extends Component {
     }
   }
 
+  renderMap() {
+    return <Map onFeatureClick={this.redirectToProfilePage.bind(this)}/>;
+  }
+
   render() {
     const { currentUserId, isSignedIn, usersLoaded, teamsLoaded, users, actions } = this.props;
-
     let content;
     if (currentUserId && usersLoaded && teamsLoaded) {
       content = (
@@ -86,7 +89,7 @@ export class App extends Component {
       <div>
         <h1 className="sr-only sr-only-focusable">X-Map</h1>
         {content}
-        <Map onFeatureClick={this.redirectToProfilePage.bind(this)}/>
+        {isSignedIn ? this.renderMap() : null}
       </div>
     );
   }
