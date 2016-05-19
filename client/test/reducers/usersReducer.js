@@ -61,4 +61,18 @@ describe('usersReducer', () => {
       1: {...user, isAdmin: false }
     });
   });
+
+  it('should delete user info on state when called with USER_GET_FAILURE or USER_DELETE_SUCCESS', () => {
+    const state = { 1: user, 2: user2 };
+    const actionPayload = {id: 1};
+    const actionGetFailure = getAction(constants.USER_GET_FAILURE, actionPayload);
+    const actionDeleteSuccess = getAction(constants.USER_DELETE_SUCCESS, actionPayload);
+    const expected = { 2: user2 };
+
+    expect(usersReducer(state, actionGetFailure)).toEqual(expected);
+    expect(Object.keys(usersReducer(state, actionGetFailure)).length).toBe(1);
+
+    expect(usersReducer(state, actionDeleteSuccess)).toEqual(expected);
+    expect(Object.keys(usersReducer(state, actionDeleteSuccess)).length).toBe(1);
+  });
 });
