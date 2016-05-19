@@ -75,4 +75,12 @@ describe('usersReducer', () => {
     expect(usersReducer(state, actionDeleteSuccess)).toEqual(expected);
     expect(Object.keys(usersReducer(state, actionDeleteSuccess)).length).toBe(1);
   });
+
+  it('should return an empty object when called for APP_LOGIN_FAILURE, APP_LOGOUT and USER_LIST_FAILURE actions', () => {
+    const expected = {};
+
+    expect(usersReducer(undefined, getAction(constants.APP_LOGIN_FAILURE, {}))).toEqual(expected);
+    expect(usersReducer(undefined, getAction(constants.APP_LOGOUT, {}))).toEqual(expected);
+    expect(usersReducer(undefined, getAction(constants.USER_LIST_FAILURE, {}))).toEqual(expected);
+  });
 });
