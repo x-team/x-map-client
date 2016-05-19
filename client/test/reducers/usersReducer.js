@@ -44,12 +44,21 @@ describe('usersReducer', () => {
     expect(Object.keys(usersReducer(state, actionUpdateSuccess)).length).toBe(2);
   });
 
-  it('should assign "isAdmin" property to an user when called with USER_GRANT_ADMIN_SUCCESS action', () => {
+  it('should assign "isAdmin: true" property to an user when called with USER_GRANT_ADMIN_SUCCESS action', () => {
     const state = { 1: user };
     const action = getAction(constants.USER_GRANT_ADMIN_SUCCESS, { id: 1 });
 
     expect(usersReducer(state, action)).toEqual({
       1: {...user, isAdmin: true }
+    });
+  });
+
+  it('should assign "isAdmin: false" property to an user when called with USER_REVOKE_ADMIN_SUCCESS action', () => {
+    const state = { 1: user };
+    const action = getAction(constants.USER_REVOKE_ADMIN_SUCCESS, { id: 1 });
+
+    expect(usersReducer(state, action)).toEqual({
+      1: {...user, isAdmin: false }
     });
   });
 });
