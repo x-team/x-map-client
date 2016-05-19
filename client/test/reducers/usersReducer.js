@@ -83,4 +83,30 @@ describe('usersReducer', () => {
     expect(usersReducer(undefined, getAction(constants.APP_LOGOUT, {}))).toEqual(expected);
     expect(usersReducer(undefined, getAction(constants.USER_LIST_FAILURE, {}))).toEqual(expected);
   });
+
+  it('should unlink a given Team ID from users teams object on TEAM_UNLINK_USER_SUCCESS action', () => {
+    const state = {
+      1: {
+        ...user,
+        teams: [{
+          id: 2,
+          name: 'X-Team'
+        }]
+      }
+    };
+    const payload = {
+      userId: 1,
+      id: 2
+    };
+    const expected = {
+      1: {
+        ...user,
+        teams: []
+      }
+    };
+    const result = getAction(constants.TEAM_UNLINK_USER_SUCCESS, payload);
+
+    expect(usersReducer(state, result)).toEqual(expected);
+    expect(usersReducer(state, result)[1].teams.length).toBe(0);
+  });
 });
