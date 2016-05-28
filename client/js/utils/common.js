@@ -1,17 +1,14 @@
-export function sortUsersByName(user1, user2) {
-  const name1 = user1.firstName + ' ' + user1.lastName;
-  const name2 = user2.firstName + ' ' + user2.lastName;
+const getUserFullName = (user) => user.firstName + ' ' + user.lastName;
 
-  if (name1 < name2) return -1;
-  if (name1 > name2) return 1;
+const sortStringsAscending = (string1, string2) => {
+  if (string1 < string2) return -1;
+  if (string1 > string2) return 1;
   return 0;
-}
+};
 
-export function sortTeamsByName(team1, team2) {
-  if (team1.name < team2.name) return -1;
-  if (team1.name > team2.name) return 1;
-  return 0;
-}
+export const sortTeamsByName = (team1, team2) => sortStringsAscending(team1.name, team2.name);
+
+export const sortUsersByName = (user1, user2) => sortStringsAscending(getUserFullName(user1), getUserFullName(user2));
 
 export default {
   sortUsersByName: sortUsersByName,

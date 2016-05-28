@@ -19,25 +19,24 @@ export class ProfilesPage extends Component {
     this.props.actions.userActiveChanged([]);
   }
 
+  renderUser(user) {
+    return (
+      <li className="list-group-item" key={user.id} onMouseOver={this.markUserAsActive.bind(this, user.id)} onMouseOut={this.markUserAsInactive.bind(this)}>
+        <MiniProfile user={user}/>
+      </li>
+    );
+  }
+
   render() {
     const { users } = this.props;
 
-    const profileObjects = [];
+    let profiles = [];
     for (const id in users) {
-      profileObjects.push(users[id]);
+      profiles.push(users[id]);
     }
 
-    profileObjects.sort(sortUsersByName);
-
-    const profiles = [];
-    profileObjects.forEach((user) => {
-      profiles.push(
-        <li className="list-group-item" key={user.id}
-          onMouseOver={this.markUserAsActive.bind(this, user.id)} onMouseOut={this.markUserAsInactive.bind(this)}>
-          <MiniProfile user={user}/>
-        </li>
-      );
-    });
+    profiles.sort(sortUsersByName);
+    profiles = profiles.map(this.renderUser.bind(this));
 
     if (!profiles.length) {
       profiles.push(<p className="alert error">Something has gone wrong. No profiles found.</p>);
