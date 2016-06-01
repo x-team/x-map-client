@@ -1,8 +1,9 @@
 $size: 500px;
+
+
 .loader {
   width: $size;
   max-width: $size;
-  min-height: $size;
   max-height: $size;
   position: fixed;
   top: calc(50% - ($size / 2));
@@ -11,24 +12,34 @@ $size: 500px;
   box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.55);
   padding-top: 50px;
   padding-bottom: 20px;
-  color: white;
   border: none;
   font-size: 1rem;
-  background-image: url(/img/worldglobe.png);
+  background: none;
   border-radius: .5rem;
 }
 
 .loader p {
-  font-size: 1.5em;
+  color: #fff;
 }
 
-.loader p:last-child {
-  margin-top: 2rem;
+.loader-container .loader-bg{
+    color:#000;
+    position: fixed;
+    height: 100%;
+    width: 177.77777778vh;
+    min-width: 100%;
+    min-height: 56.25vw;
+    background: #000;
 }
 
 .loader a {
   color: white;
   font-weight: bolder;
+}
+
+#Loader a:hover {
+  text-decoration: underline;
+
 }
 
 .loader h2 {
@@ -40,6 +51,6 @@ $size: 500px;
   height: 230px;
 }
 
-.loader h2 svg g {
-  transform: scale(0.5);
+#SignInButton a:hover {
+  background: none;
 }
