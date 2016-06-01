@@ -1,16 +1,24 @@
 $size: 500px;
 
 
-#Loader {
+.loader {
   width: $size;
-  min-height: $size;
+  max-width: $size;
+  max-height: $size;
+  position: fixed;
   top: calc(50% - ($size / 2));
-  left: calc(50% - ($size / 2));
+  right: calc(50% - ($size / 2));
   z-index: 2;
-  padding-top: 20px;
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.55);
+  padding-top: 50px;
   padding-bottom: 20px;
   border: none;
+  font-size: 1rem;
   background: none;
+  border-radius: .5rem;
+}
+
+.loader p {
   color: #fff;
 }
 
@@ -24,7 +32,7 @@ $size: 500px;
     background: #000;
 }
 
-#Loader a {
+.loader a {
   color: white;
   font-weight: bolder;
 }
@@ -34,12 +42,13 @@ $size: 500px;
 
 }
 
-#Loader h2 {
+.loader h2 {
   margin-bottom: 30px;
 }
 
-.gmnoprint.gm-style-mtc {
-  top: 60px !important;
+.loader h2 svg {
+  width: 320px;
+  height: 230px;
 }
 
 #SignInButton a:hover {
