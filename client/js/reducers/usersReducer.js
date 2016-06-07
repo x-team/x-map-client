@@ -16,7 +16,10 @@ import assignToEmpty from '../utils/assign';
 import { sortTeamsByName } from '../utils/common';
 
 
-function usersReducer(users = {}, action) {
+// Export initial state to avoid repetition on tests.
+export const initialState = {};
+
+function usersReducer(users = initialState, action) {
   Object.freeze(users);
 
   let newUsers;
