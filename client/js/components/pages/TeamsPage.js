@@ -3,6 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import DocumentTitle from 'react-document-title';
+import R from 'ramda';
+
 
 import * as TeamActions from '../../actions/TeamActions';
 import * as UserActions from '../../actions/UserActions';
@@ -22,43 +24,20 @@ export class TeamsPage extends Component {
     this.props.actions.userActiveChanged([]);
   }
 
+  renderTeam(team) {
+    return (
+      <li className="list-group-item" key={team.id} onMouseOver={this.markTeamAsActive.bind(this, team.id)} onMouseOut={this.markTeamAsInactive.bind(this)}>
+        <MiniTeam team={team}/>
+      </li>
+    );
+  }
+
   render() {
-    const { teams, isAdmin } = this.props;
-
-    const profileObjects = [];
-    for (const id in teams) {
-      profileObjects.push(teams[id]);
-    }
-
-    profileObjects.sort(sortTeamsByName);
-
-    let teamProfiles = [];
-    profileObjects.forEach((team) => {
-      teamProfiles.push(
-        <li className="list-group-item" key={team.id} onMouseOver={this.markTeamAsActive.bind(this, team.id)} onMouseOut={this.markTeamAsInactive.bind(this)}>
-          <MiniTeam team={team}/>
-        </li>
-      );
-    });
-
-    if (!teamProfiles.length) {
-      teamProfiles = <p className="alert">No teams yet.</p>;
-    } else {
-      teamProfiles = (
-        <ul className="list-group list-group-flush">
-          {teamProfiles}
-        </ul>
-      );
-    }
-
-    let adminMenu = null;
-    if (isAdmin) {
-      adminMenu = (
-        <div className="btn-group" role="group" aria-label="Actions menu">
-          <Link className="btn btn-secondary btn-sm" to="/team/new">Add team</Link>
-        </div>
-      );
-    }
+    const teams = R.compose(
+      R.map((team) => this.renderTeam(team)),
+      R.sort(sortTeamsByName),
+      R.values
+    )(this.props.teams);
 
     return (
       <DocumentTitle title="Teams | X-Map">
@@ -68,11 +47,16 @@ export class TeamsPage extends Component {
           <header className="card-header">
             <h2 className="card-title">Teams</h2>
             <p className="text-muted">Listing all teams</p>
-            {adminMenu}
+            {(() => this.props.isAdmin ?
+              (<div className="btn-group" role="group" aria-label="Actions menu">
+                <Link className="btn btn-secondary btn-sm" to="/team/new">Add team</Link>
+              </div>) : ''
+            )()}
           </header>
-
-          {teamProfiles}
-
+          {(() => teams.length ?
+            <ul className="list-group list-group-flush">{teams}</ul> :
+            <p className="alert">No teams yet.</p>
+          )()}
         </article>
       </DocumentTitle>
     );

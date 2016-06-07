@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import DocumentTitle from 'react-document-title';
 import { sortUsersByName } from '../../utils/common';
+import R from 'ramda';
 
 import * as UserActions from '../../actions/UserActions';
 
@@ -28,19 +29,11 @@ export class ProfilesPage extends Component {
   }
 
   render() {
-    const { users } = this.props;
-
-    let profiles = [];
-    for (const id in users) {
-      profiles.push(users[id]);
-    }
-
-    profiles.sort(sortUsersByName);
-    profiles = profiles.map(this.renderUser.bind(this));
-
-    if (!profiles.length) {
-      profiles.push(<p className="alert error">Something has gone wrong. No profiles found.</p>);
-    }
+    const profiles = R.compose(
+      R.map((user) => this.renderUser(user)),
+      R.sort(sortUsersByName),
+      R.values
+    )(this.props.users);
 
     return (
       <DocumentTitle title="Profiles | X-Map">
@@ -51,10 +44,10 @@ export class ProfilesPage extends Component {
             <h2 className="card-title">Profiles</h2>
             <p className="text-muted">Listing all profiles</p>
           </header>
-
-          <ul className="list-group list-group-flush">
-            {profiles}
-          </ul>
+          {(() => profiles.length ?
+            <ul className="list-group list-group-flush">{profiles}</ul> :
+            <p className="alert error">Something has gone wrong. No profiles found.</p>
+          )()}
         </article>
       </DocumentTitle>
     );
