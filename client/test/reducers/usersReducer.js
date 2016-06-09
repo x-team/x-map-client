@@ -10,7 +10,14 @@ const getAction = (type, payload) => {
 };
 
 describe('usersReducer', () => {
-  const user = { id: 1, name: 'User 1' };
+  const teams = [{
+    id: 1,
+    name: 'Team A'
+  }, {
+    id: 2,
+    name: 'Team B'
+  }];
+  const user = { id: 1, name: 'User 1', teams };
   const user2 = { id: 2, name: 'User 2' };
 
   it('should return initial state on init', () => {
@@ -31,7 +38,7 @@ describe('usersReducer', () => {
 
   it('should update user info on state when called with USER_GET_SUCCESS or USER_UPDATE_SUCCESS', () => {
     const state = { 1: user, 2: user2 };
-    const updatedUser = { id: 1, name: 'User Updated' };
+    const updatedUser = { id: 1, name: 'User Updated', teams };
     const actionPayload = { user: updatedUser };
     const actionGetSuccess = getAction(constants.USER_GET_SUCCESS, actionPayload);
     const actionUpdateSuccess = getAction(constants.USER_UPDATE_SUCCESS, actionPayload);
