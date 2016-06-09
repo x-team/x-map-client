@@ -34,7 +34,7 @@ describe('usersReducer', () => {
     const updatedUser = { id: 1, name: 'User Updated' };
     const actionPayload = { user: updatedUser };
     const actionGetSuccess = getAction(constants.USER_GET_SUCCESS, actionPayload);
-    const actionUpdateSuccess = getAction(constants.USER_GET_SUCCESS, actionPayload);
+    const actionUpdateSuccess = getAction(constants.USER_UPDATE_SUCCESS, actionPayload);
     const expected = { 1: updatedUser, 2: user2 };
 
     expect(usersReducer(state, actionGetSuccess)).toEqual(expected);
