@@ -49,7 +49,7 @@ Application is ready to run. Execute the following:
 docker-compose up -d
 ```
 
-``x-map`` appliction should be available at the [http://x-map.app](http://x-map.app)
+``x-map`` application should be available at the [http://x-map.app](http://x-map.app)
 
 To stop the application run:
 ```
