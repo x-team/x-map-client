@@ -81,3 +81,5 @@ The following composer commands are available:
 - ```docker-compose run web composer test``` - run frontend and backend tests
 - ```docker-compose run web composer test-frontend``` - run frontend tests
 - ```docker-compose run web composer test-backend``` - run backend tests
+
+Maintained by the [developers at x-team](https://www.x-team.com) | [developer blog](https://www.x-team.com/blog/)
